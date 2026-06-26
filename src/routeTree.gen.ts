@@ -9,38 +9,82 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as LocaleRouteRouteImport } from './routes/$locale/route'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as StudioIndexRouteImport } from './routes/studio.index'
+import { Route as LocaleIndexRouteImport } from './routes/$locale/index'
+import { Route as LocaleSplatRouteImport } from './routes/$locale/$'
 
+const LocaleRouteRoute = LocaleRouteRouteImport.update({
+  id: '/$locale',
+  path: '/$locale',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StudioIndexRoute = StudioIndexRouteImport.update({
+  id: '/studio/',
+  path: '/studio/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocaleIndexRoute = LocaleIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LocaleRouteRoute,
+} as any)
+const LocaleSplatRoute = LocaleSplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => LocaleRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$locale': typeof LocaleRouteRouteWithChildren
+  '/$locale/$': typeof LocaleSplatRoute
+  '/$locale/': typeof LocaleIndexRoute
+  '/studio/': typeof StudioIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$locale/$': typeof LocaleSplatRoute
+  '/$locale': typeof LocaleIndexRoute
+  '/studio': typeof StudioIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$locale': typeof LocaleRouteRouteWithChildren
+  '/$locale/$': typeof LocaleSplatRoute
+  '/$locale/': typeof LocaleIndexRoute
+  '/studio/': typeof StudioIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/$locale' | '/$locale/$' | '/$locale/' | '/studio/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/$locale/$' | '/$locale' | '/studio'
+  id: '__root__' | '/' | '/$locale' | '/$locale/$' | '/$locale/' | '/studio/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LocaleRouteRoute: typeof LocaleRouteRouteWithChildren
+  StudioIndexRoute: typeof StudioIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/$locale': {
+      id: '/$locale'
+      path: '/$locale'
+      fullPath: '/$locale'
+      preLoaderRoute: typeof LocaleRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +92,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/studio/': {
+      id: '/studio/'
+      path: '/studio'
+      fullPath: '/studio/'
+      preLoaderRoute: typeof StudioIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$locale/': {
+      id: '/$locale/'
+      path: '/'
+      fullPath: '/$locale/'
+      preLoaderRoute: typeof LocaleIndexRouteImport
+      parentRoute: typeof LocaleRouteRoute
+    }
+    '/$locale/$': {
+      id: '/$locale/$'
+      path: '/$'
+      fullPath: '/$locale/$'
+      preLoaderRoute: typeof LocaleSplatRouteImport
+      parentRoute: typeof LocaleRouteRoute
+    }
   }
 }
 
+interface LocaleRouteRouteChildren {
+  LocaleSplatRoute: typeof LocaleSplatRoute
+  LocaleIndexRoute: typeof LocaleIndexRoute
+}
+
+const LocaleRouteRouteChildren: LocaleRouteRouteChildren = {
+  LocaleSplatRoute: LocaleSplatRoute,
+  LocaleIndexRoute: LocaleIndexRoute,
+}
+
+const LocaleRouteRouteWithChildren = LocaleRouteRoute._addFileChildren(
+  LocaleRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LocaleRouteRoute: LocaleRouteRouteWithChildren,
+  StudioIndexRoute: StudioIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
