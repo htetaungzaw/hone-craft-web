@@ -106,23 +106,30 @@ export default {
     }
 
     const draftId = `drafts.translate-${source._id.replace(/^drafts\./, '')}-${targetLocale}`
-    await sanity
-      .transaction()
-      .createOrReplace({
-        _id: draftId,
-        _type: 'article',
-        title: translated.title,
-        excerpt: translated.excerpt,
-        body: translated.body,
-        slug: { _type: 'slug', current: source.slug.current },
-        language: targetLocale,
-        translationOf: { _type: 'reference', _ref: source._id.replace(/^drafts\./, '') },
-        translationStatus: 'machine-draft',
-        level: source.level,
-        roles: source.roles,
-        topics: source.topics,
+    try {
+      await sanity
+        .transaction()
+        .createOrReplace({
+          _id: draftId,
+          _type: 'article',
+          title: translated.title,
+          excerpt: translated.excerpt,
+          body: translated.body,
+          slug: { _type: 'slug', current: source.slug.current },
+          language: targetLocale,
+          translationOf: { _type: 'reference', _ref: source._id.replace(/^drafts\./, '') },
+          translationStatus: 'machine-draft',
+          level: source.level,
+          roles: source.roles,
+          topics: source.topics,
+        })
+        .commit()
+    } catch (error) {
+      return new Response(`Failed to write draft to Sanity: ${(error as Error).message}`, {
+        status: 502,
+        headers,
       })
-      .commit()
+    }
 
     return new Response(JSON.stringify({ draftId }), {
       status: 200,
