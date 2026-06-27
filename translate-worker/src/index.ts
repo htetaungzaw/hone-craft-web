@@ -14,7 +14,8 @@ const LOCALE_NAMES: Record<TargetLocale, string> = { ja: 'Japanese', my: 'Burmes
 // Gemini Flash — has a free tier (see https://ai.google.dev/pricing), unlike
 // the Anthropic API. Swapped in to avoid requiring paid API billing for a
 // personal project (see PLAN.md §AI-assisted translation for the tradeoff).
-const GEMINI_MODEL = 'gemini-2.0-flash'
+// gemini-2.0-flash has a 0 free-tier quota on AI Studio keys; 2.5-flash works.
+const GEMINI_MODEL = 'gemini-2.5-flash'
 
 interface Env {
   GEMINI_API_KEY: string
