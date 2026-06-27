@@ -4,6 +4,7 @@ import { visionTool } from '@sanity/vision'
 import { codeInput } from '@sanity/code-input'
 
 import { schemaTypes } from './sanity/schemaTypes'
+import { translateToJaAction, translateToMyAction } from './sanity/actions/translateAction'
 
 // Hardcoded (not secrets — project ID/dataset are public identifiers): the
 // Sanity CLI's deploy worker runs its own Vite server with a different env
@@ -21,4 +22,10 @@ export default defineConfig({
   basePath: '/studio',
   plugins: [structureTool(), visionTool({ defaultApiVersion: apiVersion }), codeInput()],
   schema: { types: schemaTypes },
+  document: {
+    actions: (prev, context) =>
+      context.schemaType === 'article'
+        ? [...prev, translateToJaAction, translateToMyAction]
+        : prev,
+  },
 })
