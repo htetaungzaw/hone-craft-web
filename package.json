@@ -19,7 +19,8 @@
     "deploy:app": "pnpm run build && wrangler deploy",
     "deploy:studio": "sanity deploy --url honecraft -y",
     "deploy:translate-worker": "wrangler deploy --config translate-worker/wrangler.jsonc",
-    "seed-content": "tsx scripts/seed-content.ts"
+    "seed-content": "tsx scripts/seed-content.ts",
+    "article:release": "pnpm run build:index && git add src/data/search-index.json && (git commit -m 'content: update search index' || echo 'No changes to commit') && git push"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.26.0",
