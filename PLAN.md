@@ -8,7 +8,7 @@ A multilingual educational guide: **how to use AI as a developer / software engi
 |------|----------|
 | Framework | TanStack Start (React 19), prerendered (SSG) |
 | Styling | Tailwind CSS v4 + `@tailwindcss/typography` |
-| CMS | Sanity — schema-as-code, embedded Studio |
+| CMS | Sanity — schema-as-code, Sanity-hosted Studio (sanity.studio, linked from `/studio`) — not embedded in the app's Worker, which would exceed Cloudflare's per-Worker size limit |
 | Hosting | Cloudflare Workers (Vite plugin + Wrangler), publish-webhook → rebuild |
 | Content model | One pool, three facets: **level × role × topic** + curated learning paths |
 | Browse | Static pages per facet + client-side faceted `/browse` over a build-time JSON index |
@@ -48,7 +48,7 @@ The three categorizations are **facets over one content pool**, not three separa
 /$locale/paths/$slug
 /$locale/articles/$slug
 /$locale/glossary
-/studio                    embedded Sanity Studio (admin)
+/studio                    link-out page to the Sanity-hosted Studio (admin)
 ```
 
 ## AI-assisted translation (phase ~6)
@@ -57,9 +57,9 @@ English article → Studio action → Cloudflare Worker `/api/translate` (Anthro
 
 ## Phased roadmap
 
-1. **Setup** — repo, TanStack Start, Cloudflare, Tailwind ✅ (this commit)
-2. **Content model** — Sanity schemas, taxonomy, i18n setup
-3. **Read pages** — articles, facet landings, locale routing
+1. **Setup** — repo, TanStack Start, Cloudflare, Tailwind ✅
+2. **Content model** — Sanity schemas, taxonomy, i18n setup, locale-prefixed routing ✅ (locale routing pulled forward from phase 3 to ship a coherent deployable site)
+3. **Read pages** — articles, facet landings over real Sanity data ✅
 4. **Faceted browse** — client-side level × role × topic over a build-time index
 5. **SSG + webhook** — prerender, publish → rebuild
 6. **AI translation** — Claude Studio action, human review
