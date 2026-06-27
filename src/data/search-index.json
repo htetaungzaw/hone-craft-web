@@ -1,6 +1,25 @@
 {
-  "generatedAt": "2026-06-27T06:44:37.918Z",
+  "generatedAt": "2026-06-27T06:47:33.296Z",
   "articles": [
+    {
+      "_id": "172603cb-ee7a-45d6-a2d6-9afdfeee1b6b",
+      "excerpt": "Chatbots၊ Copilots နှင့် Agents အပါအဝင် ခေတ်ပြိုင် AI နည်းပညာပုံစံအမျိုးမျိုးကို စနစ်တကျနားလည်ပြီး၊ ဝေါဟာရရှုပ်ထွေးမှုများကြောင့် လုပ်ငန်းခွင်တွင် အနှောင့်အယှက်မဖြစ်စေရန် ပြုစုထားသော လက်တွေ့အသုံးချ မြေပုံတစ်ခု ဖြစ်ပါသည်။",
+      "language": "my",
+      "level": "beginner",
+      "roles": [
+        "developer",
+        "devops",
+        "software-engineer"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "types-of-ai-you-will-actually-use-in-burmese"
+      },
+      "title": "၂၀၂၆ ခုနှစ်မှာ တကယ်လက်တွေ့သုံးရမယ့် AI အမျိုးအစားများ",
+      "topics": [
+        "types-of-ai"
+      ]
+    },
     {
       "_id": "article-agentic-workflows-for-software-engineers",
       "excerpt": "Three concrete workflows where an agent loop earns its keep for software engineers — and the checkpoints that keep each one safe to run unsupervised.",
