@@ -11,7 +11,12 @@ const projectId = 'g80rrv8s'
 const dataset = 'production'
 const apiVersion = '2026-01-01'
 
-const client = createClient({ projectId, dataset, apiVersion, useCdn: true })
+// useCdn: false — this script runs rarely (only on pnpm run article:release /
+// build) and must always see the very latest publish. The CDN-cached API
+// (useCdn: true) lags up to ~60s after a mutation, which previously caused
+// freshly-published articles to silently get skipped if article:release ran
+// right after publishing in Studio.
+const client = createClient({ projectId, dataset, apiVersion, useCdn: false })
 
 const taxonomyProjection = `{ key, slug, order, title }`
 
