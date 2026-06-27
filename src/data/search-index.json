@@ -1,9 +1,245 @@
 {
-  "generatedAt": "2026-06-27T04:03:48.676Z",
-  "articles": [],
+  "generatedAt": "2026-06-27T04:18:35.968Z",
+  "articles": [
+    {
+      "_id": "article-agentic-workflows-for-software-engineers",
+      "excerpt": "Three concrete workflows where an agent loop earns its keep for software engineers — and the checkpoints that keep each one safe to run unsupervised.",
+      "language": "en",
+      "level": "intermediate",
+      "roles": [
+        "software-engineer"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "agentic-workflows-for-software-engineers"
+      },
+      "title": "Agentic workflows for software engineers: planning, review, and refactors",
+      "topics": [
+        "agentic-ai",
+        "tools"
+      ]
+    },
+    {
+      "_id": "article-common-pitfalls-adopting-ai-tools",
+      "excerpt": "The recurring ways teams get burned adopting AI tools — overtrust, under-scoping, and skipped review — and the concrete habits that prevent each one.",
+      "language": "en",
+      "level": "advanced",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "common-pitfalls-adopting-ai-tools"
+      },
+      "title": "Common pitfalls when adopting AI tools — and how to avoid them",
+      "topics": [
+        "pitfalls"
+      ]
+    },
+    {
+      "_id": "article-first-ai-pair-programming-session",
+      "excerpt": "A concrete walkthrough of working with an AI coding assistant on a real, small task — what to type, what to check, and the habits that make the difference.",
+      "language": "en",
+      "level": "beginner",
+      "roles": [
+        "developer"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "first-ai-pair-programming-session"
+      },
+      "title": "Your first AI pair-programming session",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
+      "_id": "article-types-of-ai-you-will-actually-use",
+      "excerpt": "Chatbots, copilots, agents, and everything in between — a working map of the AI tools you'll run into, so the vocabulary stops getting in your way.",
+      "language": "en",
+      "level": "beginner",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "types-of-ai-you-will-actually-use"
+      },
+      "title": "Types of AI you'll actually use in 2026",
+      "topics": [
+        "types-of-ai"
+      ]
+    },
+    {
+      "_id": "article-using-ai-agents-safely-in-devops",
+      "excerpt": "Agentic AI can write infra changes, draft runbooks, and triage incidents — but the blast radius of a mistake is higher in DevOps than almost anywhere else. Here's how to use it without losing sleep.",
+      "language": "en",
+      "level": "intermediate",
+      "roles": [
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "using-ai-agents-safely-in-devops"
+      },
+      "title": "Using AI agents safely in DevOps: deploys, infra-as-code, and guardrails",
+      "topics": [
+        "agentic-ai",
+        "tools",
+        "pitfalls"
+      ]
+    },
+    {
+      "_id": "article-what-is-agentic-ai-really",
+      "excerpt": "Past the buzzword: what makes an AI system \"agentic,\" what it can and can't do unsupervised, and the mental model that keeps you from over- or under-trusting it.",
+      "language": "en",
+      "level": "beginner",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "what-is-agentic-ai-really"
+      },
+      "title": "What is agentic AI, really?",
+      "topics": [
+        "agentic-ai"
+      ]
+    }
+  ],
   "taxonomy": {
-    "level": [],
-    "role": [],
-    "topic": []
+    "level": [
+      {
+        "key": "beginner",
+        "order": 1,
+        "slug": {
+          "_type": "slug",
+          "current": "beginner"
+        },
+        "title": {
+          "en": "Beginner"
+        }
+      },
+      {
+        "key": "intermediate",
+        "order": 2,
+        "slug": {
+          "_type": "slug",
+          "current": "intermediate"
+        },
+        "title": {
+          "en": "Intermediate"
+        }
+      },
+      {
+        "key": "advanced",
+        "order": 3,
+        "slug": {
+          "_type": "slug",
+          "current": "advanced"
+        },
+        "title": {
+          "en": "Advanced"
+        }
+      },
+      {
+        "key": "professional",
+        "order": 4,
+        "slug": {
+          "_type": "slug",
+          "current": "professional"
+        },
+        "title": {
+          "en": "Professional"
+        }
+      }
+    ],
+    "role": [
+      {
+        "key": "developer",
+        "order": 1,
+        "slug": {
+          "_type": "slug",
+          "current": "developer"
+        },
+        "title": {
+          "en": "Developer"
+        }
+      },
+      {
+        "key": "software-engineer",
+        "order": 2,
+        "slug": {
+          "_type": "slug",
+          "current": "software-engineer"
+        },
+        "title": {
+          "en": "Software Engineer"
+        }
+      },
+      {
+        "key": "devops",
+        "order": 3,
+        "slug": {
+          "_type": "slug",
+          "current": "devops"
+        },
+        "title": {
+          "en": "DevOps / SRE"
+        }
+      }
+    ],
+    "topic": [
+      {
+        "key": "types-of-ai",
+        "order": 1,
+        "slug": {
+          "_type": "slug",
+          "current": "types-of-ai"
+        },
+        "title": {
+          "en": "Types of AI"
+        }
+      },
+      {
+        "key": "agentic-ai",
+        "order": 2,
+        "slug": {
+          "_type": "slug",
+          "current": "agentic-ai"
+        },
+        "title": {
+          "en": "Agentic AI"
+        }
+      },
+      {
+        "key": "tools",
+        "order": 3,
+        "slug": {
+          "_type": "slug",
+          "current": "tools"
+        },
+        "title": {
+          "en": "Tools"
+        }
+      },
+      {
+        "key": "pitfalls",
+        "order": 4,
+        "slug": {
+          "_type": "slug",
+          "current": "pitfalls"
+        },
+        "title": {
+          "en": "Pitfalls"
+        }
+      }
+    ]
   }
 }
