@@ -18,7 +18,8 @@
     "deploy": "pnpm run build && wrangler deploy",
     "deploy:app": "pnpm run build && wrangler deploy",
     "deploy:studio": "sanity deploy --url honecraft -y",
-    "deploy:translate-worker": "wrangler deploy --config translate-worker/wrangler.jsonc"
+    "deploy:translate-worker": "wrangler deploy --config translate-worker/wrangler.jsonc",
+    "seed-content": "tsx scripts/seed-content.ts"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.26.0",

@@ -63,7 +63,7 @@ English article → Studio action → Cloudflare Worker `/api/translate` (Anthro
 4. **Faceted browse** — client-side level × role × topic over a build-time index ✅
 5. **SSG + webhook** — prerender, publish → rebuild ✅
 6. **AI translation** — Claude Studio action, human review ✅ (worker deployed; needs ANTHROPIC_API_KEY/SANITY_WRITE_TOKEN added to .env, then `pnpm run deploy:translate-worker` + `pnpm run deploy:studio` to go fully live)
-7. **Seed content** — launch articles (the long pole)
+7. **Seed content** — launch articles (the long pole) — 6 articles + taxonomy written, `pnpm run seed-content` ready, blocked on SANITY_WRITE_TOKEN
 8. **Polish & launch** — SEO, analytics, a11y, editor UX
 
 ## Repo structure
