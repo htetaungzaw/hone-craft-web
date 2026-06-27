@@ -64,7 +64,7 @@ function ArticlePage() {
         />
       )}
 
-      <div className="prose prose-neutral mt-8 max-w-none dark:prose-invert">
+      <div className="prose prose-neutral mt-8 max-w-none">
         <PortableText value={article.body as never} />
       </div>
 
