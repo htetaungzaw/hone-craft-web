@@ -11,14 +11,13 @@ const TARGET_LOCALES = ['ja', 'my'] as const
 type TargetLocale = (typeof TARGET_LOCALES)[number]
 
 const LOCALE_NAMES: Record<TargetLocale, string> = { ja: 'Japanese', my: 'Burmese' }
-// Sonnet 4.6 default, Opus 4.8 for Burmese (PLAN.md §AI-assisted translation).
-const MODEL_BY_LOCALE: Record<TargetLocale, string> = {
-  ja: 'claude-sonnet-4-6',
-  my: 'claude-opus-4-8',
-}
+// Gemini Flash — has a free tier (see https://ai.google.dev/pricing), unlike
+// the Anthropic API. Swapped in to avoid requiring paid API billing for a
+// personal project (see PLAN.md §AI-assisted translation for the tradeoff).
+const GEMINI_MODEL = 'gemini-2.0-flash'
 
 interface Env {
-  ANTHROPIC_API_KEY: string
+  GEMINI_API_KEY: string
   SANITY_WRITE_TOKEN: string
   TRANSLATE_SHARED_SECRET: string
 }
@@ -97,7 +96,7 @@ export default {
 
     let translated: { title: string; excerpt: string; body: unknown }
     try {
-      translated = await translateArticle(source, targetLocale as TargetLocale, env.ANTHROPIC_API_KEY)
+      translated = await translateArticle(source, targetLocale as TargetLocale, env.GEMINI_API_KEY)
     } catch (error) {
       return new Response(`Translation failed: ${(error as Error).message}`, {
         status: 502,
@@ -149,27 +148,27 @@ Respond with ONLY valid JSON of this exact shape, nothing else: {"title": string
 Input:
 ${JSON.stringify({ title: source.title, excerpt: source.excerpt, body: source.body })}`
 
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+        generationConfig: { responseMimeType: 'application/json' },
+      }),
     },
-    body: JSON.stringify({
-      model: MODEL_BY_LOCALE[targetLocale],
-      max_tokens: 8192,
-      messages: [{ role: 'user', content: prompt }],
-    }),
-  })
+  )
 
   if (!response.ok) {
-    throw new Error(`Anthropic API error ${response.status}: ${await response.text()}`)
+    throw new Error(`Gemini API error ${response.status}: ${await response.text()}`)
   }
 
-  const data = (await response.json()) as { content: Array<{ type: string; text?: string }> }
-  const text = data.content.find((block) => block.type === 'text')?.text
-  if (!text) throw new Error('No text content in Anthropic response')
+  const data = (await response.json()) as {
+    candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>
+  }
+  const text = data.candidates?.[0]?.content?.parts?.[0]?.text
+  if (!text) throw new Error('No text content in Gemini response')
 
   const jsonMatch = text.match(/\{[\s\S]*\}/)
   if (!jsonMatch) throw new Error('Could not find JSON in model response')

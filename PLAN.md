@@ -15,7 +15,7 @@ A multilingual educational guide: **how to use AI as a developer / software engi
 | i18n | EN / JA / MY · doc-level translation (articles/paths/glossary) + field-level taxonomy · locale-prefixed routes |
 | Burmese | Unicode-only · Noto Sans Myanmar · `lang="my"` · larger line-height |
 | Translation rollout | English-first, progressive · fallback to EN with a notice |
-| Translation workflow | Claude-powered, structure-aware Studio action → human review (Sonnet 4.6 default, Opus 4.8 for Burmese) |
+| Translation workflow | Gemini-powered (free tier — avoids requiring paid API billing for a personal project), structure-aware Studio action → human review |
 | Name | **Honecraft** — "hone your craft"; cleared trademark/product/domain search |
 
 ## Content architecture
@@ -53,7 +53,9 @@ The three categorizations are **facets over one content pool**, not three separa
 
 ## AI-assisted translation (phase ~6)
 
-English article → Studio action → Cloudflare Worker `/api/translate` (Anthropic + Sanity write tokens server-side) → Claude translates **structure-aware** (leaves code blocks / inline code / links intact) → creates a linked JA/MY draft (`translationStatus: machine-draft`) → human reviews → publish. Glossary injected for term consistency (critical for Burmese).
+English article → Studio action → Cloudflare Worker `/translate` (Gemini + Sanity write tokens server-side) → Gemini translates **structure-aware** (leaves code blocks / inline code / links intact) → creates a linked JA/MY draft (`translationStatus: machine-draft`) → human reviews → publish. Glossary injected for term consistency (critical for Burmese).
+
+Originally planned around the Anthropic API, switched to Gemini (`gemini-2.0-flash`) because Gemini has a usable free tier and the user didn't want to set up paid Anthropic API billing for a personal project — same worker, same translationStatus workflow either way, only the model call changed.
 
 ## Phased roadmap
 
@@ -62,7 +64,7 @@ English article → Studio action → Cloudflare Worker `/api/translate` (Anthro
 3. **Read pages** — articles, facet landings over real Sanity data ✅
 4. **Faceted browse** — client-side level × role × topic over a build-time index ✅
 5. **SSG + webhook** — prerender, publish → rebuild ✅
-6. **AI translation** — Claude Studio action, human review ✅ (worker deployed; needs ANTHROPIC_API_KEY/SANITY_WRITE_TOKEN added to .env, then `pnpm run deploy:translate-worker` + `pnpm run deploy:studio` to go fully live)
+6. **AI translation** — Gemini Studio action, human review ✅ (worker deployed; needs GEMINI_API_KEY/SANITY_WRITE_TOKEN added to .env, then `pnpm run deploy:translate-worker` + `pnpm run deploy:studio` to go fully live)
 7. **Seed content** — launch articles (the long pole) — 6 articles + taxonomy written, `pnpm run seed-content` ready, blocked on SANITY_WRITE_TOKEN
 8. **Polish & launch** — SEO, analytics, a11y, editor UX
 
