@@ -49,5 +49,5 @@ function createTranslateAction(targetLocale: 'ja' | 'my', label: string): Docume
   }
 }
 
-export const translateToJaAction = createTranslateAction('ja', 'Translate to Japanese (Claude)')
-export const translateToMyAction = createTranslateAction('my', 'Translate to Burmese (Claude)')
+export const translateToJaAction = createTranslateAction('ja', 'Translate to Japanese (Gemini)')
+export const translateToMyAction = createTranslateAction('my', 'Translate to Burmese (Gemini)')
