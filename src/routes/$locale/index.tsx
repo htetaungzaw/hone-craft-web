@@ -59,19 +59,29 @@ function Home() {
 
       <div className="mt-12 grid w-full gap-4 sm:grid-cols-3">
         {facets.map(({ icon: Icon, title, desc }) => (
-          <div
+          <Link
             key={title}
-            className="rounded-xl border border-neutral-200 p-5 text-left dark:border-neutral-800"
+            to="/$locale/browse"
+            params={{ locale }}
+            className="rounded-xl border border-neutral-200 p-5 text-left transition hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
           >
             <Icon className="mb-3 h-5 w-5 text-neutral-700 dark:text-neutral-300" />
             <h2 className="font-medium">{title}</h2>
             <p className="mt-1 text-sm text-neutral-500">{desc}</p>
-          </div>
+          </Link>
         ))}
       </div>
 
+      <Link
+        to="/$locale/browse"
+        params={{ locale }}
+        className="mt-8 rounded-full border border-neutral-900 px-4 py-2 text-sm font-medium dark:border-neutral-100"
+      >
+        Browse all articles
+      </Link>
+
       <p className="mt-12 text-sm text-neutral-400">
-        Phase 2 · content model wired · seed content coming next
+        Phase 4 · faceted browse wired · seed content coming next
       </p>
     </main>
   )

@@ -14,6 +14,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as StudioIndexRouteImport } from './routes/studio.index'
 import { Route as LocaleIndexRouteImport } from './routes/$locale/index'
 import { Route as LocaleGlossaryRouteImport } from './routes/$locale/glossary'
+import { Route as LocaleBrowseRouteImport } from './routes/$locale/browse'
 import { Route as LocaleSplatRouteImport } from './routes/$locale/$'
 import { Route as LocaleTopicsTopicRouteImport } from './routes/$locale/topics/$topic'
 import { Route as LocaleRolesRoleRouteImport } from './routes/$locale/roles/$role'
@@ -44,6 +45,11 @@ const LocaleIndexRoute = LocaleIndexRouteImport.update({
 const LocaleGlossaryRoute = LocaleGlossaryRouteImport.update({
   id: '/glossary',
   path: '/glossary',
+  getParentRoute: () => LocaleRouteRoute,
+} as any)
+const LocaleBrowseRoute = LocaleBrowseRouteImport.update({
+  id: '/browse',
+  path: '/browse',
   getParentRoute: () => LocaleRouteRoute,
 } as any)
 const LocaleSplatRoute = LocaleSplatRouteImport.update({
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$locale': typeof LocaleRouteRouteWithChildren
   '/$locale/$': typeof LocaleSplatRoute
+  '/$locale/browse': typeof LocaleBrowseRoute
   '/$locale/glossary': typeof LocaleGlossaryRoute
   '/$locale/': typeof LocaleIndexRoute
   '/studio/': typeof StudioIndexRoute
@@ -93,6 +100,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$locale/$': typeof LocaleSplatRoute
+  '/$locale/browse': typeof LocaleBrowseRoute
   '/$locale/glossary': typeof LocaleGlossaryRoute
   '/$locale': typeof LocaleIndexRoute
   '/studio': typeof StudioIndexRoute
@@ -107,6 +115,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$locale': typeof LocaleRouteRouteWithChildren
   '/$locale/$': typeof LocaleSplatRoute
+  '/$locale/browse': typeof LocaleBrowseRoute
   '/$locale/glossary': typeof LocaleGlossaryRoute
   '/$locale/': typeof LocaleIndexRoute
   '/studio/': typeof StudioIndexRoute
@@ -122,6 +131,7 @@ export interface FileRouteTypes {
     | '/'
     | '/$locale'
     | '/$locale/$'
+    | '/$locale/browse'
     | '/$locale/glossary'
     | '/$locale/'
     | '/studio/'
@@ -134,6 +144,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/$locale/$'
+    | '/$locale/browse'
     | '/$locale/glossary'
     | '/$locale'
     | '/studio'
@@ -147,6 +158,7 @@ export interface FileRouteTypes {
     | '/'
     | '/$locale'
     | '/$locale/$'
+    | '/$locale/browse'
     | '/$locale/glossary'
     | '/$locale/'
     | '/studio/'
@@ -200,6 +212,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocaleGlossaryRouteImport
       parentRoute: typeof LocaleRouteRoute
     }
+    '/$locale/browse': {
+      id: '/$locale/browse'
+      path: '/browse'
+      fullPath: '/$locale/browse'
+      preLoaderRoute: typeof LocaleBrowseRouteImport
+      parentRoute: typeof LocaleRouteRoute
+    }
     '/$locale/$': {
       id: '/$locale/$'
       path: '/$'
@@ -247,6 +266,7 @@ declare module '@tanstack/react-router' {
 
 interface LocaleRouteRouteChildren {
   LocaleSplatRoute: typeof LocaleSplatRoute
+  LocaleBrowseRoute: typeof LocaleBrowseRoute
   LocaleGlossaryRoute: typeof LocaleGlossaryRoute
   LocaleIndexRoute: typeof LocaleIndexRoute
   LocaleArticlesSlugRoute: typeof LocaleArticlesSlugRoute
@@ -258,6 +278,7 @@ interface LocaleRouteRouteChildren {
 
 const LocaleRouteRouteChildren: LocaleRouteRouteChildren = {
   LocaleSplatRoute: LocaleSplatRoute,
+  LocaleBrowseRoute: LocaleBrowseRoute,
   LocaleGlossaryRoute: LocaleGlossaryRoute,
   LocaleIndexRoute: LocaleIndexRoute,
   LocaleArticlesSlugRoute: LocaleArticlesSlugRoute,

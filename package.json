@@ -6,9 +6,10 @@
     "#/*": "./src/*"
   },
   "scripts": {
-    "dev": "vite dev --port 3000",
+    "dev": "pnpm run build:index && vite dev --port 3000",
     "generate-routes": "tsr generate",
-    "build": "vite build",
+    "build:index": "tsx scripts/build-search-index.ts",
+    "build": "pnpm run build:index && vite build",
     "preview": "vite preview",
     "test": "vitest run",
     "lint": "eslint",
@@ -54,6 +55,7 @@
     "eslint": "^9.20.0",
     "jsdom": "^28.1.0",
     "prettier": "^3.8.1",
+    "tsx": "^4.22.4",
     "typescript": "^6.0.2",
     "vite": "^8.0.0",
     "vitest": "^4.1.5",

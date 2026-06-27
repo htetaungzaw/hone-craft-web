@@ -1,7 +1,7 @@
 import type { Locale } from '../../sanity/lib/locale'
 
 export function localized(
-  field: Record<Locale, string | undefined> | undefined,
+  field: Partial<Record<Locale, string>> | undefined,
   locale: Locale,
 ): string {
   if (!field) return ''

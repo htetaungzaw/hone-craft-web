@@ -60,7 +60,7 @@ English article → Studio action → Cloudflare Worker `/api/translate` (Anthro
 1. **Setup** — repo, TanStack Start, Cloudflare, Tailwind ✅
 2. **Content model** — Sanity schemas, taxonomy, i18n setup, locale-prefixed routing ✅ (locale routing pulled forward from phase 3 to ship a coherent deployable site)
 3. **Read pages** — articles, facet landings over real Sanity data ✅
-4. **Faceted browse** — client-side level × role × topic over a build-time index
+4. **Faceted browse** — client-side level × role × topic over a build-time index ✅
 5. **SSG + webhook** — prerender, publish → rebuild
 6. **AI translation** — Claude Studio action, human review
 7. **Seed content** — launch articles (the long pole)
