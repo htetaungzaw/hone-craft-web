@@ -3,6 +3,8 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import appCss from '../styles.css?url'
+import { ThemeToggle } from '../components/ThemeToggle'
+import { themeBootstrapScript } from '../lib/theme'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -55,8 +57,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: themeBootstrapScript }} />
       </head>
-      <body>
+      <body className="bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+        <div className="fixed right-4 top-4 z-50">
+          <ThemeToggle />
+        </div>
         {children}
         <TanStackDevtools
           config={{
