@@ -1,8 +1,14 @@
 import { createClient } from '@sanity/client'
 
+// Hardcoded (not secrets — project ID/dataset are public identifiers, same as
+// sanity.config.ts): keeps the app buildable in CI without wiring extra env vars.
+const projectId = 'g80rrv8s'
+const dataset = 'production'
+const apiVersion = '2026-01-01'
+
 export const sanityClient = createClient({
-  projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
-  dataset: import.meta.env.VITE_SANITY_DATASET,
-  apiVersion: import.meta.env.VITE_SANITY_API_VERSION,
+  projectId,
+  dataset,
+  apiVersion,
   useCdn: true,
 })

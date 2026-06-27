@@ -61,7 +61,7 @@ English article → Studio action → Cloudflare Worker `/api/translate` (Anthro
 2. **Content model** — Sanity schemas, taxonomy, i18n setup, locale-prefixed routing ✅ (locale routing pulled forward from phase 3 to ship a coherent deployable site)
 3. **Read pages** — articles, facet landings over real Sanity data ✅
 4. **Faceted browse** — client-side level × role × topic over a build-time index ✅
-5. **SSG + webhook** — prerender, publish → rebuild
+5. **SSG + webhook** — prerender, publish → rebuild ✅
 6. **AI translation** — Claude Studio action, human review
 7. **Seed content** — launch articles (the long pole)
 8. **Polish & launch** — SEO, analytics, a11y, editor UX
@@ -89,3 +89,4 @@ wrangler.jsonc       Cloudflare Worker config
 - Visual direction / tone
 - Analytics (Cloudflare Web Analytics vs Plausible)
 - Launch content count (lean 6 vs full 12 articles)
+- **Manual step, Phase 5:** the GitHub Actions rebuild workflow (`.github/workflows/deploy.yml`) exists and runs on every push to `main`, but Sanity doesn't yet call it on publish. To wire that up: create a fine-grained GitHub PAT scoped to this repo with "Contents: read" + the ability to dispatch (Actions: write), then add a Sanity webhook (manage.sanity.io → API → Webhooks, or `sanity hook create`) on the `production` dataset, on Create/Update/Delete, POSTing to `https://api.github.com/repos/htetaungzaw/hone-craft-web/dispatches` with header `Authorization: Bearer <PAT>` and body `{"event_type":"sanity-publish"}`.
