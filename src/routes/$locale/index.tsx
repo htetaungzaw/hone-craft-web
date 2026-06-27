@@ -72,17 +72,22 @@ function Home() {
         ))}
       </div>
 
-      <Link
-        to="/$locale/browse"
-        params={{ locale }}
-        className="mt-8 rounded-full border border-neutral-900 px-4 py-2 text-sm font-medium dark:border-neutral-100"
-      >
-        Browse all articles
-      </Link>
-
-      <p className="mt-12 text-sm text-neutral-400">
-        Phase 4 · faceted browse wired · seed content coming next
-      </p>
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <Link
+          to="/$locale/browse"
+          params={{ locale }}
+          className="rounded-full border border-neutral-900 px-4 py-2 text-sm font-medium dark:border-neutral-100"
+        >
+          Browse all articles
+        </Link>
+        <Link
+          to="/$locale/paths"
+          params={{ locale }}
+          className="rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium dark:border-neutral-700"
+        >
+          Learning paths
+        </Link>
+      </div>
     </main>
   )
 }

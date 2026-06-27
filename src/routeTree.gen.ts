@@ -16,6 +16,7 @@ import { Route as LocaleIndexRouteImport } from './routes/$locale/index'
 import { Route as LocaleGlossaryRouteImport } from './routes/$locale/glossary'
 import { Route as LocaleBrowseRouteImport } from './routes/$locale/browse'
 import { Route as LocaleSplatRouteImport } from './routes/$locale/$'
+import { Route as LocalePathsIndexRouteImport } from './routes/$locale/paths/index'
 import { Route as LocaleTopicsTopicRouteImport } from './routes/$locale/topics/$topic'
 import { Route as LocaleRolesRoleRouteImport } from './routes/$locale/roles/$role'
 import { Route as LocalePathsSlugRouteImport } from './routes/$locale/paths/$slug'
@@ -57,6 +58,11 @@ const LocaleSplatRoute = LocaleSplatRouteImport.update({
   path: '/$',
   getParentRoute: () => LocaleRouteRoute,
 } as any)
+const LocalePathsIndexRoute = LocalePathsIndexRouteImport.update({
+  id: '/paths/',
+  path: '/paths/',
+  getParentRoute: () => LocaleRouteRoute,
+} as any)
 const LocaleTopicsTopicRoute = LocaleTopicsTopicRouteImport.update({
   id: '/topics/$topic',
   path: '/topics/$topic',
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/$locale/paths/$slug': typeof LocalePathsSlugRoute
   '/$locale/roles/$role': typeof LocaleRolesRoleRoute
   '/$locale/topics/$topic': typeof LocaleTopicsTopicRoute
+  '/$locale/paths/': typeof LocalePathsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -109,6 +116,7 @@ export interface FileRoutesByTo {
   '/$locale/paths/$slug': typeof LocalePathsSlugRoute
   '/$locale/roles/$role': typeof LocaleRolesRoleRoute
   '/$locale/topics/$topic': typeof LocaleTopicsTopicRoute
+  '/$locale/paths': typeof LocalePathsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -124,6 +132,7 @@ export interface FileRoutesById {
   '/$locale/paths/$slug': typeof LocalePathsSlugRoute
   '/$locale/roles/$role': typeof LocaleRolesRoleRoute
   '/$locale/topics/$topic': typeof LocaleTopicsTopicRoute
+  '/$locale/paths/': typeof LocalePathsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -140,6 +149,7 @@ export interface FileRouteTypes {
     | '/$locale/paths/$slug'
     | '/$locale/roles/$role'
     | '/$locale/topics/$topic'
+    | '/$locale/paths/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -153,6 +163,7 @@ export interface FileRouteTypes {
     | '/$locale/paths/$slug'
     | '/$locale/roles/$role'
     | '/$locale/topics/$topic'
+    | '/$locale/paths'
   id:
     | '__root__'
     | '/'
@@ -167,6 +178,7 @@ export interface FileRouteTypes {
     | '/$locale/paths/$slug'
     | '/$locale/roles/$role'
     | '/$locale/topics/$topic'
+    | '/$locale/paths/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -226,6 +238,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocaleSplatRouteImport
       parentRoute: typeof LocaleRouteRoute
     }
+    '/$locale/paths/': {
+      id: '/$locale/paths/'
+      path: '/paths'
+      fullPath: '/$locale/paths/'
+      preLoaderRoute: typeof LocalePathsIndexRouteImport
+      parentRoute: typeof LocaleRouteRoute
+    }
     '/$locale/topics/$topic': {
       id: '/$locale/topics/$topic'
       path: '/topics/$topic'
@@ -274,6 +293,7 @@ interface LocaleRouteRouteChildren {
   LocalePathsSlugRoute: typeof LocalePathsSlugRoute
   LocaleRolesRoleRoute: typeof LocaleRolesRoleRoute
   LocaleTopicsTopicRoute: typeof LocaleTopicsTopicRoute
+  LocalePathsIndexRoute: typeof LocalePathsIndexRoute
 }
 
 const LocaleRouteRouteChildren: LocaleRouteRouteChildren = {
@@ -286,6 +306,7 @@ const LocaleRouteRouteChildren: LocaleRouteRouteChildren = {
   LocalePathsSlugRoute: LocalePathsSlugRoute,
   LocaleRolesRoleRoute: LocaleRolesRoleRoute,
   LocaleTopicsTopicRoute: LocaleTopicsTopicRoute,
+  LocalePathsIndexRoute: LocalePathsIndexRoute,
 }
 
 const LocaleRouteRouteWithChildren = LocaleRouteRoute._addFileChildren(

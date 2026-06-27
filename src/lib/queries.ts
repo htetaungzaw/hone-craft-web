@@ -123,6 +123,26 @@ export interface LearningPath {
   articles: Array<ArticleSummary>
 }
 
+export interface LearningPathSummary {
+  _id: string
+  title: Record<Locale, string | undefined>
+  slug: { current: string }
+  description?: Record<Locale, string | undefined>
+  articleCount: number
+}
+
+export async function getLearningPaths(): Promise<Array<LearningPathSummary>> {
+  return sanityClient.fetch<Array<LearningPathSummary>>(
+    `*[_type=="learningPath"] | order(title.en asc){
+      _id,
+      title,
+      slug,
+      description,
+      "articleCount": count(articles),
+    }`,
+  )
+}
+
 export async function getLearningPathBySlug(slug: string): Promise<LearningPath | null> {
   return sanityClient.fetch<LearningPath | null>(
     `*[_type=="learningPath" && slug.current==$slug][0]{
