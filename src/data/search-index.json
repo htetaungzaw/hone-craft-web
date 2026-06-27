@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T04:18:35.968Z",
+  "generatedAt": "2026-06-27T04:46:52.550Z",
   "articles": [
     {
       "_id": "article-agentic-workflows-for-software-engineers",
@@ -108,6 +108,25 @@
         "current": "what-is-agentic-ai-really"
       },
       "title": "What is agentic AI, really?",
+      "topics": [
+        "agentic-ai"
+      ]
+    },
+    {
+      "_id": "translate-article-what-is-agentic-ai-really-my",
+      "excerpt": "ရေပန်းစားနေတဲ့ စကားလုံးနောက်ကွယ်မှာ- AI စနစ်တစ်ခုကို \"agentic\" ဖြစ်အောင် ဘာကလုပ်တာလဲ၊ ၎င်းက ကြီးကြပ်မှုမရှိဘဲ ဘာတွေလုပ်နိုင်လဲ၊ မလုပ်နိုင်လဲ၊ ပြီးတော့ ၎င်းကို ယုံကြည်မှုလွန်ကဲခြင်း သို့မဟုတ် လျော့နည်းခြင်းမှ ကာကွယ်ပေးမယ့် စိတ်ပိုင်းဆိုင်ရာ ပုံစံ။",
+      "language": "my",
+      "level": "beginner",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "what-is-agentic-ai-really-in-myanmar"
+      },
+      "title": "Agentic AI ဆိုတာ တကယ်တော့ ဘာလဲ။",
       "topics": [
         "agentic-ai"
       ]
