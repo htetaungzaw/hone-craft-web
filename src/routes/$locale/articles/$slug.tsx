@@ -1,11 +1,11 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
-import { PortableText } from '@portabletext/react'
 import type { Locale } from '../../../../sanity/lib/locale'
 import { getArticleBySlug } from '../../../lib/queries'
 import { localized } from '../../../lib/localized'
 import { urlFor } from '../../../lib/image'
 import { Badge } from '../../../components/ui/badge'
 import { BackLink } from '../../../components/BackLink'
+import { ArticleBody } from '../../../components/ArticleBody'
 
 export const Route = createFileRoute('/$locale/articles/$slug')({
   loader: async ({ params }) => {
@@ -56,7 +56,7 @@ function ArticlePage() {
       )}
 
       <div className="prose prose-theme mt-8 max-w-none">
-        <PortableText value={article.body as never} />
+        <ArticleBody value={article.body} />
       </div>
 
       {article.author && (

@@ -84,6 +84,22 @@ export async function getArticleBySlug(
   return fallback ? { article: fallback, isFallback: true } : null
 }
 
+async function getArticleSummaryBySlug(
+  slug: string,
+  locale: Locale,
+): Promise<ArticleSummary | null> {
+  const localized = await sanityClient.fetch<ArticleSummary | null>(
+    `*[_type=="article" && slug.current==$slug && language==$locale][0]${articleSummaryProjection}`,
+    { slug, locale },
+  )
+  if (localized) return localized
+
+  return sanityClient.fetch<ArticleSummary | null>(
+    `*[_type=="article" && slug.current==$slug && language=="en"][0]${articleSummaryProjection}`,
+    { slug },
+  )
+}
+
 export async function getTaxonomyTerm(
   type: TaxonomyType,
   key: string,
@@ -143,18 +159,42 @@ export async function getLearningPaths(): Promise<Array<LearningPathSummary>> {
   )
 }
 
-export async function getLearningPathBySlug(slug: string): Promise<LearningPath | null> {
-  return sanityClient.fetch<LearningPath | null>(
+export async function getLearningPathBySlug(
+  slug: string,
+  locale: Locale,
+): Promise<LearningPath | null> {
+  const path = await sanityClient.fetch<{
+    _id: string
+    title: Record<Locale, string | undefined>
+    slug: { current: string }
+    description?: Record<Locale, string | undefined>
+    level: TaxonomyTerm | null
+    articleSlugs: Array<string>
+  } | null>(
     `*[_type=="learningPath" && slug.current==$slug][0]{
       _id,
       title,
       slug,
       description,
       "level": level->${taxonomyProjection},
-      "articles": articles[]->${articleSummaryProjection},
+      "articleSlugs": articles[]->slug.current,
     }`,
     { slug },
   )
+  if (!path) return null
+
+  const articles = await Promise.all(
+    path.articleSlugs.map((articleSlug) => getArticleSummaryBySlug(articleSlug, locale)),
+  )
+
+  return {
+    _id: path._id,
+    title: path.title,
+    slug: path.slug,
+    description: path.description,
+    level: path.level,
+    articles: articles.filter((article): article is ArticleSummary => article !== null),
+  }
 }
 
 export interface GlossaryTerm {

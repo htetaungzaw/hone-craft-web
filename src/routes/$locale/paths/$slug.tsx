@@ -6,7 +6,7 @@ import { BackLink } from '../../../components/BackLink'
 
 export const Route = createFileRoute('/$locale/paths/$slug')({
   loader: async ({ params }) => {
-    const path = await getLearningPathBySlug(params.slug)
+    const path = await getLearningPathBySlug(params.slug, params.locale as Locale)
     if (!path) throw notFound()
     return path
   },
