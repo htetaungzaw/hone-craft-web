@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T11:11:51.199Z",
+  "generatedAt": "2026-06-28T15:04:00.665Z",
   "articles": [
     {
       "_id": "172603cb-ee7a-45d6-a2d6-9afdfeee1b6b",
@@ -59,7 +59,7 @@
     },
     {
       "_id": "article-claude-code-agents-and-subagents-my",
-      "excerpt": "Subagent ဆိုတာ အလုပ်တစ်ခုအတွက် သင်ဖန်တီးလိုက်တဲ့ သီးခြား Claude instance တစ်ခု။ ဘယ်အခါ လွှဲအပ်ရမလဲ၊ ကျွမ်းကျင်တဲ့ လုပ်ဖော်ကိုင်ဖက်လို ဘယ်လို ညွှန်ကြားရမလဲ ဆိုတာ နားလည်ထားရင် အသုံးပြုမှု level တက်လာစေတယ်။",
+      "excerpt": "Subagent ဆိုတာ အလုပ်တစ်ခုအတွက် သင်ဖန်တီးလိုက်တဲ့ သီးခြား Claude Instance တစ်ခုပါ။ ဘယ်အချိန်မှာ အလုပ်ခွဲခိုင်းရမလဲ၊ ကျွမ်းကျင်တဲ့ လုပ်ဖော်ကိုင်ဖက်တစ်ယောက်လို ဘယ်လို စနစ်တကျ ညွှန်ကြားရမလဲဆိုတာ သိထားရင် AI ကို အသုံးပြုရတဲ့ Level သိသိသာသာ တက်လာပါလိမ့်မယ်။",
       "language": "my",
       "level": "advanced",
       "roles": [
@@ -109,7 +109,7 @@
         "_type": "slug",
         "current": "claude-code-everyday-workflow-in-burmese"
       },
-      "title": "နေ့စဉ် Claude Code အလုပ်လုပ်ပုံ",
+      "title": "နေ့စဉ် Claude Code နဲ့ အလုပ်လုပ်ပုံ (Daily Workflow)",
       "topics": [
         "tools"
       ]
@@ -173,7 +173,7 @@
     },
     {
       "_id": "article-claude-code-memory-explained-my",
-      "excerpt": "CLAUDE.md ဖိုင်များက Claude Code ကို သင်နှင့် သင့် project အကြောင်း ရေရှည်မှတ်ဉာဏ် ဘယ်လိုပေးသလဲ၊ ဘာတွေ ထည့်သင့်သလဲ၊ ဘာတွေ ချန်ထားသင့်သလဲ။",
+      "excerpt": "Claude Code ရဲ့ CLAUDE.md ဖိုင်တွေကတစ်ဆင့် AI ကို သင့် project အကြောင်း ရေရှည်မှတ်ဉာဏ် (Persistent Memory) ဘယ်လိုပေးမလဲ။ Chat အသစ်တိုင်း အစကနေ ပြန်ရှင်းပြရတဲ့ ဒုက္ခကင်းဝေးစေဖို့ ဘာတွေထည့်ပြီး ဘာတွေချန်ထားသင့်သလဲဆိုတာကို လေ့လာကြည့်ရအောင်။",
       "language": "my",
       "level": "intermediate",
       "roles": [
@@ -249,7 +249,7 @@
     },
     {
       "_id": "article-claude-code-skills-and-slash-commands-my",
-      "excerpt": "Memory က Claude ကို project အကြောင်း အချက်အလက်တွေ ပြောပေးတယ်။ Skills ကတော့ ထပ်ခါထပ်ခါ လုပ်ရတဲ့ လုပ်ငန်းစဉ်တွေကို command တစ်ခုတည်းနဲ့ run နိုင်အောင် ပေးတယ်။",
+      "excerpt": "Memory က Project အချက်အလက်တွေကို မှတ်မိစေရင်၊ Skills က ထပ်ခါထပ်ခါ လုပ်ရတဲ့ အလုပ်တွေကို Slash Command တစ်ခုတည်းနဲ့ Run စေပါတယ်။ လုပ်ငန်းစဉ်တွေကို အကြိမ်တိုင်း တိကျမှန်ကန်အောင် ဘယ်လို Automation ဖန်တီးမလဲဆိုတာ လေ့လာကြည့်ရအောင်။",
       "language": "my",
       "level": "intermediate",
       "roles": [
@@ -287,7 +287,7 @@
     },
     {
       "_id": "article-claude-desktop-computer-use-and-mcp-my",
-      "excerpt": "Desktop app က chat ထက် ထပ်ပေးတာက ဘာလဲ — native app တွေအတွက် ထိန်းချုပ်ထားတဲ့ screen control နဲ့ သင်အသုံးပြုနေတဲ့ tool တွေကို ချိတ်ဆက်ပေးတဲ့ MCP connectors။",
+      "excerpt": "Desktop App က Chat Window ထက် ဘာတွေ ပိုလုပ်ပေးနိုင်သလဲ။ Browser tab တစ်ခု မလုပ်နိုင်တဲ့ Native App တွေအတွက် ထိန်းချုပ်ထားသော Screen Control နဲ့ ပြင်ပ Tool တွေကို စနစ်တကျ ချိတ်ဆက်ပေးမယ့် MCP Connectors အကြောင်း လေ့လာကြည့်ရအောင်။",
       "language": "my",
       "level": "intermediate",
       "roles": [
@@ -325,7 +325,7 @@
     },
     {
       "_id": "article-claude-in-chrome-safe-web-automation-my",
-      "excerpt": "Chrome extension က Claude ကို web page တွေပေါ်မှာ ဖတ်ခြင်း၊ နှိပ်ခြင်း၊ စာရိုက်ခြင်း လုပ်ပေးနိုင်အောင် ပြုလုပ်တယ်။ ဘယ်အရာအတွက် တကယ်ကောင်းသလဲ၊ ဘယ်လို လုံခြုံမှု အလေ့အကျင့်တွေ မထားလို့မဖြစ်သလဲ။",
+      "excerpt": "Chrome Extension က Claude ကို Web Page တွေပေါ်မှာ လူတစ်ယောက်လို ဖတ်ရှု၊ နှိပ်စက်၊ စာရိုက်နိုင်စွမ်း ပေးစွမ်းပါတယ်။ ဒါက ဘယ်လိုအလုပ်တွေအတွက် တကယ်ကောင်းသလဲ၊ ဘယ်လိုမျိုး လုံခြုံရေးအလေ့အကျင့်တွေ မဖြစ်မနေ ထားရှိရမလဲဆိုတာ လေ့လာကြည့်ရအောင်။",
       "language": "my",
       "level": "advanced",
       "roles": [
