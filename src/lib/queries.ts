@@ -84,19 +84,22 @@ export async function getArticleBySlug(
   return fallback ? { article: fallback, isFallback: true } : null
 }
 
-async function getArticleSummaryBySlug(
-  slug: string,
+// Resolves a translation by following translationOf rather than assuming a
+// shared slug across languages -- slugs drift independently per language
+// (Sanity's default slug-uniqueness check pushes authors toward distinct,
+// locale-suffixed slugs), so the canonical document id is the only stable link.
+async function getArticleSummaryByCanonicalId(
+  canonicalId: string,
   locale: Locale,
 ): Promise<ArticleSummary | null> {
-  const localized = await sanityClient.fetch<ArticleSummary | null>(
-    `*[_type=="article" && slug.current==$slug && language==$locale][0]${articleSummaryProjection}`,
-    { slug, locale },
+  const candidates = await sanityClient.fetch<Array<ArticleSummary>>(
+    `*[_type=="article" && (_id==$canonicalId || translationOf._ref==$canonicalId)]${articleSummaryProjection}`,
+    { canonicalId },
   )
-  if (localized) return localized
-
-  return sanityClient.fetch<ArticleSummary | null>(
-    `*[_type=="article" && slug.current==$slug && language=="en"][0]${articleSummaryProjection}`,
-    { slug },
+  return (
+    candidates.find((article) => article.language === locale) ??
+    candidates.find((article) => article._id === canonicalId) ??
+    null
   )
 }
 
@@ -169,7 +172,7 @@ export async function getLearningPathBySlug(
     slug: { current: string }
     description?: Record<Locale, string | undefined>
     level: TaxonomyTerm | null
-    articleSlugs: Array<string>
+    articleIds: Array<string>
   } | null>(
     `*[_type=="learningPath" && slug.current==$slug][0]{
       _id,
@@ -177,14 +180,14 @@ export async function getLearningPathBySlug(
       slug,
       description,
       "level": level->${taxonomyProjection},
-      "articleSlugs": articles[]->slug.current,
+      "articleIds": articles[]->_id,
     }`,
     { slug },
   )
   if (!path) return null
 
   const articles = await Promise.all(
-    path.articleSlugs.map((articleSlug) => getArticleSummaryBySlug(articleSlug, locale)),
+    path.articleIds.map((articleId) => getArticleSummaryByCanonicalId(articleId, locale)),
   )
 
   return {
