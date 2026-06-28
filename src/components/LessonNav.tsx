@@ -23,12 +23,12 @@ export function LessonNav({
         Part of: {localized(pathTitle, locale)}
       </Link>
 
-      <div className="mt-4 flex items-stretch gap-3">
+      <div className="mt-4 flex flex-col items-stretch gap-3 sm:flex-row">
         {prev && (
           <Link
             to="/$locale/articles/$slug"
             params={{ locale, slug: prev.slug.current }}
-            className="bg-card border-border hover:border-primary/40 flex flex-1 items-center gap-3 rounded-xl border p-4 shadow-sm transition hover:shadow-md"
+            className="bg-card border-border hover:border-primary/40 flex min-w-0 flex-1 items-center gap-3 rounded-xl border p-4 shadow-sm transition hover:shadow-md"
           >
             <ArrowLeft className="text-muted-foreground size-4 shrink-0" />
             <div className="min-w-0">
@@ -41,7 +41,7 @@ export function LessonNav({
           <Link
             to="/$locale/articles/$slug"
             params={{ locale, slug: next.slug.current }}
-            className="bg-card border-border hover:border-primary/40 flex flex-1 items-center justify-end gap-3 rounded-xl border p-4 text-right shadow-sm transition hover:shadow-md"
+            className="bg-card border-border hover:border-primary/40 flex min-w-0 flex-1 items-center justify-end gap-3 rounded-xl border p-4 text-right shadow-sm transition hover:shadow-md"
           >
             <div className="min-w-0">
               <p className="text-muted-foreground text-xs uppercase tracking-widest">Next</p>
