@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T05:55:20.733Z",
+  "generatedAt": "2026-06-28T06:00:13.688Z",
   "articles": [
     {
       "_id": "172603cb-ee7a-45d6-a2d6-9afdfeee1b6b",
@@ -58,6 +58,25 @@
       ]
     },
     {
+      "_id": "article-claude-code-agents-and-subagents-my",
+      "excerpt": "Subagent ဆိုတာ အလုပ်တစ်ခုအတွက် သင်ဖန်တီးလိုက်တဲ့ သီးခြား Claude instance တစ်ခု။ ဘယ်အခါ လွှဲအပ်ရမလဲ၊ ကျွမ်းကျင်တဲ့ လုပ်ဖော်ကိုင်ဖက်လို ဘယ်လို ညွှန်ကြားရမလဲ ဆိုတာ နားလည်ထားရင် အသုံးပြုမှု level တက်လာစေတယ်။",
+      "language": "my",
+      "level": "advanced",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-code-agents-and-subagents-in-burmese"
+      },
+      "title": "Agents နှင့် Subagents — ဘယ်အချိန် လွှဲအပ်မလဲ၊ ဘယ်လို ညွှန်ကြားမလဲ",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
       "_id": "article-claude-code-everyday-workflow",
       "excerpt": "Reading, editing, running commands, reviewing diffs, and undoing mistakes — the small habits that make day-to-day work with an agent smooth instead of stressful.",
       "language": "en",
@@ -72,6 +91,25 @@
         "current": "claude-code-everyday-workflow-in-english"
       },
       "title": "The everyday Claude Code workflow",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
+      "_id": "article-claude-code-everyday-workflow-my",
+      "excerpt": "ဖတ်ခြင်း၊ ပြင်ဆင်ခြင်း၊ command run ခြင်း၊ diff review ခြင်း၊ မှားယွင်းချက်များကို ပြန်ပြင်ခြင်း — agent နဲ့ နေ့စဉ်အလုပ်လုပ်ရာတွင် စိတ်ပင်ပန်းမှုမရှိအောင် ကူညီပေးတဲ့ အလေ့အကျင့်လေးများ။",
+      "language": "my",
+      "level": "beginner",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-code-everyday-workflow-in-burmese"
+      },
+      "title": "နေ့စဉ် Claude Code အလုပ်လုပ်ပုံ",
       "topics": [
         "tools"
       ]
@@ -96,6 +134,25 @@
       ]
     },
     {
+      "_id": "article-claude-code-getting-started-my",
+      "excerpt": "Claude Code ဆိုတာ ဘာလဲ၊ ဘယ်လို install လုပ်မလဲ၊ ပထမဆုံး session တစ်ခုက ဘယ်လိုဖြစ်မလဲ — terminal ဖွင့်ကတည်းက ပထမဆုံး edit ကို review လုပ်တဲ့အထိ။",
+      "language": "my",
+      "level": "beginner",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-code-getting-started-in-burmese"
+      },
+      "title": "Claude Code ကို စတင်အသုံးပြုခြင်း",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
       "_id": "article-claude-code-memory-explained",
       "excerpt": "How CLAUDE.md files give Claude Code lasting context about you and your project, what belongs in them, and what to leave out.",
       "language": "en",
@@ -110,6 +167,25 @@
         "current": "claude-code-memory-explained-in-english"
       },
       "title": "Claude Code memory, explained",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
+      "_id": "article-claude-code-memory-explained-my",
+      "excerpt": "CLAUDE.md ဖိုင်များက Claude Code ကို သင်နှင့် သင့် project အကြောင်း ရေရှည်မှတ်ဉာဏ် ဘယ်လိုပေးသလဲ၊ ဘာတွေ ထည့်သင့်သလဲ၊ ဘာတွေ ချန်ထားသင့်သလဲ။",
+      "language": "my",
+      "level": "intermediate",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-code-memory-explained-in-burmese"
+      },
+      "title": "Claude Code ၏ Memory စနစ်ကို ရှင်းပြခြင်း",
       "topics": [
         "tools"
       ]
@@ -134,6 +210,25 @@
       ]
     },
     {
+      "_id": "article-claude-code-plan-mode-worktrees-hooks-at-scale-my",
+      "excerpt": "Professional level — ပြောင်းလဲမှုမလုပ်ခင် ဘေးကင်းစွာ စစ်ဆေးနည်း၊ agent အလုပ်များကို ပြိုင်တူ run နည်း၊ hooks နဲ့ policy automate နည်း၊ ရေရှည်ဆောင်ရွက်နိုင်စေတဲ့ team အလေ့အကျင့်များ။",
+      "language": "my",
+      "level": "professional",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-code-plan-mode-worktrees-hooks-at-scale-in-burmese"
+      },
+      "title": "Plan Mode, Worktrees, Hooks — Claude ကို လုံခြုံစွာ Scale ချဲ့အသုံးပြုခြင်း",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
       "_id": "article-claude-code-skills-and-slash-commands",
       "excerpt": "Memory tells Claude facts about your project. Skills give it reusable procedures — named, repeatable workflows you can trigger with a single command.",
       "language": "en",
@@ -148,6 +243,25 @@
         "current": "claude-code-skills-and-slash-commands-in-english"
       },
       "title": "Skills and slash commands",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
+      "_id": "article-claude-code-skills-and-slash-commands-my",
+      "excerpt": "Memory က Claude ကို project အကြောင်း အချက်အလက်တွေ ပြောပေးတယ်။ Skills ကတော့ ထပ်ခါထပ်ခါ လုပ်ရတဲ့ လုပ်ငန်းစဉ်တွေကို command တစ်ခုတည်းနဲ့ run နိုင်အောင် ပေးတယ်။",
+      "language": "my",
+      "level": "intermediate",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-code-skills-and-slash-commands-in-burmese"
+      },
+      "title": "Skills နှင့် Slash Commands",
       "topics": [
         "tools"
       ]
@@ -172,6 +286,25 @@
       ]
     },
     {
+      "_id": "article-claude-desktop-computer-use-and-mcp-my",
+      "excerpt": "Desktop app က chat ထက် ထပ်ပေးတာက ဘာလဲ — native app တွေအတွက် ထိန်းချုပ်ထားတဲ့ screen control နဲ့ သင်အသုံးပြုနေတဲ့ tool တွေကို ချိတ်ဆက်ပေးတဲ့ MCP connectors။",
+      "language": "my",
+      "level": "intermediate",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-desktop-computer-use-and-mcp-in-burmese"
+      },
+      "title": "Claude Desktop App — Computer Use နှင့် MCP Connectors",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
       "_id": "article-claude-in-chrome-safe-web-automation",
       "excerpt": "The Chrome extension lets Claude read, click, and type on real web pages on your behalf. What it's genuinely good for, and the safety habits worth keeping non-negotiable.",
       "language": "en",
@@ -191,6 +324,25 @@
       ]
     },
     {
+      "_id": "article-claude-in-chrome-safe-web-automation-my",
+      "excerpt": "Chrome extension က Claude ကို web page တွေပေါ်မှာ ဖတ်ခြင်း၊ နှိပ်ခြင်း၊ စာရိုက်ခြင်း လုပ်ပေးနိုင်အောင် ပြုလုပ်တယ်။ ဘယ်အရာအတွက် တကယ်ကောင်းသလဲ၊ ဘယ်လို လုံခြုံမှု အလေ့အကျင့်တွေ မထားလို့မဖြစ်သလဲ။",
+      "language": "my",
+      "level": "advanced",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-in-chrome-safe-web-automation-in-burmese"
+      },
+      "title": "Claude in Chrome — ဘေးကင်းသော Web Automation",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
       "_id": "article-claude-surfaces-which-one-for-what",
       "excerpt": "Four different places to talk to Claude, each built for a different job. A practical decision guide so you stop reaching for the wrong one.",
       "language": "en",
@@ -205,6 +357,25 @@
         "current": "claude-surfaces-which-one-for-what-in-english"
       },
       "title": "Claude Code, claude.ai, Desktop app, Chrome extension: which one for what",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
+      "_id": "article-claude-surfaces-which-one-for-what-my",
+      "excerpt": "Claude ကို ပြောဆိုနိုင်တဲ့ နေရာလေးခု — တစ်ခုစီက အလုပ်အမျိုးမျိုးအတွက် ဖန်တီးထားတာ။ မှားယွင်းတဲ့ tool ကို မရွေးတော့ဘို့ လက်တွေ့ ဆုံးဖြတ်နည်း guide တစ်ခု။",
+      "language": "my",
+      "level": "beginner",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-surfaces-which-one-for-what-in-burmese-in-burmese"
+      },
+      "title": "Claude Code, claude.ai, Desktop app, Chrome extension — ဘယ်အချိန် ဘာကို သုံးမလဲ",
       "topics": [
         "tools"
       ]
