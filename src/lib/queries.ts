@@ -28,6 +28,7 @@ export interface ArticleSummary {
 export interface Article extends ArticleSummary {
   body: unknown
   translationStatus: string
+  translationOfId: string | null
   author: {
     name: string
     slug: { current: string }
@@ -64,6 +65,7 @@ const articleProjection = `{
   "topics": topics[]->${taxonomyProjection},
   body,
   translationStatus,
+  "translationOfId": translationOf._ref,
   "author": author->{ name, slug, avatar, bio },
 }`
 
@@ -101,6 +103,47 @@ async function getArticleSummaryByCanonicalId(
     candidates.find((article) => article._id === canonicalId) ??
     null
   )
+}
+
+export interface LessonNeighbors {
+  pathSlug: string
+  pathTitle: Record<Locale, string | undefined>
+  prev: ArticleSummary | null
+  next: ArticleSummary | null
+}
+
+// An article can appear in at most one learning path in the current content
+// model (no article reuses a path slot), so the first match is sufficient.
+export async function getLessonNeighbors(
+  article: { _id: string; translationOfId: string | null },
+  locale: Locale,
+): Promise<LessonNeighbors | null> {
+  const canonicalId = article.translationOfId ?? article._id
+
+  const path = await sanityClient.fetch<{
+    slug: { current: string }
+    title: Record<Locale, string | undefined>
+    articleIds: Array<string>
+  } | null>(
+    `*[_type=="learningPath" && $canonicalId in articles[]._ref][0]{
+      slug,
+      title,
+      "articleIds": articles[]._ref,
+    }`,
+    { canonicalId },
+  )
+  if (!path) return null
+
+  const index = path.articleIds.indexOf(canonicalId)
+  const prevId = index > 0 ? path.articleIds[index - 1] : null
+  const nextId = index >= 0 && index < path.articleIds.length - 1 ? path.articleIds[index + 1] : null
+
+  const [prev, next] = await Promise.all([
+    prevId ? getArticleSummaryByCanonicalId(prevId, locale) : null,
+    nextId ? getArticleSummaryByCanonicalId(nextId, locale) : null,
+  ])
+
+  return { pathSlug: path.slug.current, pathTitle: path.title, prev, next }
 }
 
 export async function getTaxonomyTerm(

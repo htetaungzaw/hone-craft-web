@@ -1,24 +1,26 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 import type { Locale } from '../../../../sanity/lib/locale'
-import { getArticleBySlug } from '../../../lib/queries'
+import { getArticleBySlug, getLessonNeighbors } from '../../../lib/queries'
 import { localized } from '../../../lib/localized'
 import { urlFor } from '../../../lib/image'
 import { Badge } from '../../../components/ui/badge'
 import { BackLink } from '../../../components/BackLink'
 import { ArticleBody } from '../../../components/ArticleBody'
+import { LessonNav } from '../../../components/LessonNav'
 
 export const Route = createFileRoute('/$locale/articles/$slug')({
   loader: async ({ params }) => {
     const result = await getArticleBySlug(params.slug, params.locale as Locale)
     if (!result) throw notFound()
-    return result
+    const neighbors = await getLessonNeighbors(result.article, params.locale as Locale)
+    return { ...result, neighbors }
   },
   component: ArticlePage,
 })
 
 function ArticlePage() {
   const { locale } = Route.useParams()
-  const { article, isFallback } = Route.useLoaderData()
+  const { article, isFallback, neighbors } = Route.useLoaderData()
 
   return (
     <main className="mx-auto max-w-2xl px-6 py-16">
@@ -76,6 +78,8 @@ function ArticlePage() {
           </div>
         </div>
       )}
+
+      {neighbors && <LessonNav neighbors={neighbors} locale={locale as Locale} />}
     </main>
   )
 }
