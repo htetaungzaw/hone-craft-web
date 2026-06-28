@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T07:00:09.438Z",
+  "generatedAt": "2026-06-28T05:55:20.733Z",
   "articles": [
     {
       "_id": "172603cb-ee7a-45d6-a2d6-9afdfeee1b6b",
@@ -35,6 +35,177 @@
       "title": "Agentic workflows for software engineers: planning, review, and refactors",
       "topics": [
         "agentic-ai",
+        "tools"
+      ]
+    },
+    {
+      "_id": "article-claude-code-agents-and-subagents",
+      "excerpt": "A subagent is a separate Claude instance you spawn for a piece of work. Knowing when to delegate to one — and how to brief it like a capable colleague — is what separates basic and advanced usage.",
+      "language": "en",
+      "level": "advanced",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-code-agents-and-subagents-in-english"
+      },
+      "title": "Agents and subagents: when to delegate, how to brief them well",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
+      "_id": "article-claude-code-everyday-workflow",
+      "excerpt": "Reading, editing, running commands, reviewing diffs, and undoing mistakes — the small habits that make day-to-day work with an agent smooth instead of stressful.",
+      "language": "en",
+      "level": "beginner",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-code-everyday-workflow-in-english"
+      },
+      "title": "The everyday Claude Code workflow",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
+      "_id": "article-claude-code-getting-started",
+      "excerpt": "What Claude Code actually is, how to install it, and what your first real session looks like — from opening a terminal to your first reviewed edit.",
+      "language": "en",
+      "level": "beginner",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-code-getting-started-in-english"
+      },
+      "title": "Getting started with Claude Code",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
+      "_id": "article-claude-code-memory-explained",
+      "excerpt": "How CLAUDE.md files give Claude Code lasting context about you and your project, what belongs in them, and what to leave out.",
+      "language": "en",
+      "level": "intermediate",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-code-memory-explained-in-english"
+      },
+      "title": "Claude Code memory, explained",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
+      "_id": "article-claude-code-plan-mode-worktrees-hooks-at-scale",
+      "excerpt": "The professional layer: exploring safely before committing to changes, running parallel agent work without collisions, automating policy with hooks, and the team habits that make this sustainable.",
+      "language": "en",
+      "level": "professional",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-code-plan-mode-worktrees-hooks-at-scale-in-english"
+      },
+      "title": "Plan mode, worktrees, hooks, and running Claude safely at scale",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
+      "_id": "article-claude-code-skills-and-slash-commands",
+      "excerpt": "Memory tells Claude facts about your project. Skills give it reusable procedures — named, repeatable workflows you can trigger with a single command.",
+      "language": "en",
+      "level": "intermediate",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-code-skills-and-slash-commands-in-english"
+      },
+      "title": "Skills and slash commands",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
+      "_id": "article-claude-desktop-computer-use-and-mcp",
+      "excerpt": "What the Desktop app adds beyond chat: supervised control of your screen for native apps, and MCP connectors that link Claude to the tools you already use.",
+      "language": "en",
+      "level": "intermediate",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-desktop-computer-use-and-mcp-in-english"
+      },
+      "title": "Claude Desktop app: computer use and MCP connectors",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
+      "_id": "article-claude-in-chrome-safe-web-automation",
+      "excerpt": "The Chrome extension lets Claude read, click, and type on real web pages on your behalf. What it's genuinely good for, and the safety habits worth keeping non-negotiable.",
+      "language": "en",
+      "level": "advanced",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-in-chrome-safe-web-automation-in-english"
+      },
+      "title": "Claude in Chrome: safe web automation",
+      "topics": [
+        "tools"
+      ]
+    },
+    {
+      "_id": "article-claude-surfaces-which-one-for-what",
+      "excerpt": "Four different places to talk to Claude, each built for a different job. A practical decision guide so you stop reaching for the wrong one.",
+      "language": "en",
+      "level": "beginner",
+      "roles": [
+        "developer",
+        "software-engineer",
+        "devops"
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "claude-surfaces-which-one-for-what-in-english"
+      },
+      "title": "Claude Code, claude.ai, Desktop app, Chrome extension: which one for what",
+      "topics": [
         "tools"
       ]
     },
