@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T15:04:00.665Z",
+  "generatedAt": "2026-06-28T15:05:48.205Z",
   "articles": [
     {
       "_id": "172603cb-ee7a-45d6-a2d6-9afdfeee1b6b",
@@ -211,7 +211,7 @@
     },
     {
       "_id": "article-claude-code-plan-mode-worktrees-hooks-at-scale-my",
-      "excerpt": "Professional level — ပြောင်းလဲမှုမလုပ်ခင် ဘေးကင်းစွာ စစ်ဆေးနည်း၊ agent အလုပ်များကို ပြိုင်တူ run နည်း၊ hooks နဲ့ policy automate နည်း၊ ရေရှည်ဆောင်ရွက်နိုင်စေတဲ့ team အလေ့အကျင့်များ။",
+      "excerpt": "Claude Code ကို Production စနစ်တွေပေါ်မှာ Team အလိုက် လုံခြုံစွာ Scale ချဲ့သုံးစွဲနည်း။ အမှားကင်းဝေးစေမယ့် Plan Mode၊ Task တွေကို ပြိုင်တူ Run မယ့် Worktrees နဲ့ အဖွဲ့အစည်းရဲ့ စည်းကမ်းတွေကို အလိုအလျောက် Enforce လုပ်ပေးမယ့် Hooks စနစ်တွေကို လေ့လာကြည့်ရအောင်။",
       "language": "my",
       "level": "professional",
       "roles": [
