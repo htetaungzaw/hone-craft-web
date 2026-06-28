@@ -61,6 +61,8 @@ function ArticlePage() {
         <ArticleBody value={article.body} />
       </div>
 
+      {neighbors && <LessonNav neighbors={neighbors} locale={locale as Locale} />}
+
       {article.author && (
         <div className="border-border mt-12 flex items-center gap-3 border-t pt-6">
           {Boolean(article.author.avatar) && (
@@ -78,8 +80,6 @@ function ArticlePage() {
           </div>
         </div>
       )}
-
-      {neighbors && <LessonNav neighbors={neighbors} locale={locale as Locale} />}
     </main>
   )
 }
