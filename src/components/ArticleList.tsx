@@ -11,7 +11,7 @@ export function ArticleList({
 }) {
   if (articles.length === 0) {
     return (
-      <p className="mt-8 text-neutral-500">
+      <p className="text-muted-foreground mt-8">
         No articles here yet — content is being written.
       </p>
     )
@@ -24,10 +24,10 @@ export function ArticleList({
           key={article._id}
           to="/$locale/articles/$slug"
           params={{ locale, slug: article.slug.current }}
-          className="rounded-xl border border-neutral-200 p-5 text-left transition hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
+          className="bg-card border-border hover:border-primary/40 rounded-xl border p-5 text-left shadow-sm transition hover:shadow-md"
         >
           <h2 className="font-medium">{article.title}</h2>
-          <p className="mt-1 text-sm text-neutral-500">{article.excerpt}</p>
+          <p className="text-muted-foreground mt-1 text-sm">{article.excerpt}</p>
         </Link>
       ))}
     </div>

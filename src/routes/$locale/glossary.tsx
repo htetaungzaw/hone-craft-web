@@ -1,6 +1,7 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import type { Locale } from '../../../sanity/lib/locale'
 import { getGlossaryTerms } from '../../lib/queries'
+import { BackLink } from '../../components/BackLink'
 
 export const Route = createFileRoute('/$locale/glossary')({
   loader: ({ params }) => getGlossaryTerms(params.locale as Locale),
@@ -13,13 +14,7 @@ function GlossaryPage() {
 
   return (
     <main className="mx-auto max-w-2xl px-6 py-16">
-      <Link
-        to="/$locale"
-        params={{ locale }}
-        className="text-sm font-medium text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100"
-      >
-        ← Honecraft
-      </Link>
+      <BackLink locale={locale} />
       <h1 className="mt-6 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
         Glossary
       </h1>
@@ -31,13 +26,13 @@ function GlossaryPage() {
       )}
 
       {terms.length === 0 ? (
-        <p className="mt-8 text-neutral-500">No terms yet — the glossary is being written.</p>
+        <p className="text-muted-foreground mt-8">No terms yet — the glossary is being written.</p>
       ) : (
         <dl className="mt-8 space-y-6">
           {terms.map((term) => (
-            <div key={term._id} id={term.slug.current}>
-              <dt className="font-medium">{term.term}</dt>
-              <dd className="mt-1 text-neutral-600 dark:text-neutral-300">{term.definition}</dd>
+            <div key={term._id} id={term.slug.current} className="border-border border-b pb-5">
+              <dt className="text-primary font-semibold">{term.term}</dt>
+              <dd className="text-muted-foreground mt-1.5">{term.definition}</dd>
             </div>
           ))}
         </dl>

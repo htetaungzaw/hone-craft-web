@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useMemo, useState } from 'react'
 import type { Locale } from '../../../sanity/lib/locale'
+import { BackLink } from '../../components/BackLink'
 import { FacetGroup } from '../../components/FacetGroup'
 import { searchIndex } from '../../lib/searchIndex'
 
@@ -39,13 +40,7 @@ function BrowsePage() {
 
   return (
     <main className="mx-auto max-w-4xl px-6 py-16">
-      <Link
-        to="/$locale"
-        params={{ locale }}
-        className="text-sm font-medium text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100"
-      >
-        ← Honecraft
-      </Link>
+      <BackLink locale={locale} />
       <h1 className="mt-6 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
         Browse
       </h1>
@@ -82,12 +77,12 @@ function BrowsePage() {
         </aside>
 
         <div>
-          <p className="mb-4 text-sm text-neutral-500">
+          <p className="text-muted-foreground mb-4 text-sm">
             {filtered.length} article{filtered.length === 1 ? '' : 's'}
           </p>
 
           {filtered.length === 0 ? (
-            <p className="text-neutral-500">No articles match these filters yet.</p>
+            <p className="text-muted-foreground">No articles match these filters yet.</p>
           ) : (
             <div className="grid gap-4">
               {filtered.map((article) => (
@@ -95,10 +90,10 @@ function BrowsePage() {
                   key={article._id}
                   to="/$locale/articles/$slug"
                   params={{ locale, slug: article.slug.current }}
-                  className="rounded-xl border border-neutral-200 p-5 text-left transition hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
+                  className="bg-card border-border hover:border-primary/40 rounded-xl border p-5 text-left shadow-sm transition hover:shadow-md"
                 >
                   <h2 className="font-medium">{article.title}</h2>
-                  <p className="mt-1 text-sm text-neutral-500">{article.excerpt}</p>
+                  <p className="text-muted-foreground mt-1 text-sm">{article.excerpt}</p>
                 </Link>
               ))}
             </div>

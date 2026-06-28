@@ -17,7 +17,7 @@ export function FacetGroup({
 }) {
   return (
     <fieldset>
-      <legend className="text-sm font-medium uppercase tracking-widest text-neutral-500">
+      <legend className="text-muted-foreground text-sm font-medium uppercase tracking-widest">
         {title}
       </legend>
       <div className="mt-3 flex flex-col gap-2">
@@ -27,7 +27,7 @@ export function FacetGroup({
               type="checkbox"
               checked={selected.has(term.key)}
               onChange={() => onToggle(term.key)}
-              className="h-4 w-4 rounded border-neutral-300 dark:border-neutral-700"
+              className="border-border text-primary focus:ring-ring h-4 w-4 rounded"
             />
             {localized(term.title, locale)}
           </label>
