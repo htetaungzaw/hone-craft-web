@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T10:51:30.715Z",
+  "generatedAt": "2026-06-28T10:57:13.477Z",
   "articles": [
     {
       "_id": "172603cb-ee7a-45d6-a2d6-9afdfeee1b6b",
@@ -363,7 +363,7 @@
     },
     {
       "_id": "article-claude-surfaces-which-one-for-what-my",
-      "excerpt": "Claude ကို ပြောဆိုနိုင်တဲ့ နေရာလေးခု — တစ်ခုစီက အလုပ်အမျိုးမျိုးအတွက် ဖန်တီးထားတာ။ မှားယွင်းတဲ့ tool ကို မရွေးတော့ဘို့ လက်တွေ့ ဆုံးဖြတ်နည်း guide တစ်ခု။",
+      "excerpt": "Claude ကို အသုံးပြုနိုင်တဲ့ နေရာလေးခု ရှိပါတယ်။ တစ်ခုစီက အလုပ်အမျိုးအစား မတူညီတဲ့ ပန်းတိုင်တွေအတွက် သီးသန့် ရည်ရွယ်ပြီး ဖန်တီးထားတာပါ။ Tool အမှားကြီး ရွေးပြီး အချိန်မကုန်စေဖို့အတွက် လက်တွေ့ကျကျ ဆုံးဖြတ်နိုင်မယ့် လမ်းညွှန်ချက်ကို ဖော်ပြပေးလိုက်ပါတယ်။",
       "language": "my",
       "level": "beginner",
       "roles": [
@@ -375,7 +375,7 @@
         "_type": "slug",
         "current": "claude-surfaces-which-one-for-what-in-burmese-in-burmese"
       },
-      "title": "Claude Code, claude.ai, Desktop app, Chrome extension — ဘယ်အချိန် ဘာကို သုံးမလဲ",
+      "title": "Claude Code, Claude.ai, Desktop App, Chrome Extension — ဘယ်အချိန်မှာ ဘာကို သုံးမလဲ။",
       "topics": [
         "tools"
       ]
