@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T06:00:13.688Z",
+  "generatedAt": "2026-06-28T10:51:30.715Z",
   "articles": [
     {
       "_id": "172603cb-ee7a-45d6-a2d6-9afdfeee1b6b",
@@ -135,7 +135,7 @@
     },
     {
       "_id": "article-claude-code-getting-started-my",
-      "excerpt": "Claude Code ဆိုတာ ဘာလဲ၊ ဘယ်လို install လုပ်မလဲ၊ ပထမဆုံး session တစ်ခုက ဘယ်လိုဖြစ်မလဲ — terminal ဖွင့်ကတည်းက ပထမဆုံး edit ကို review လုပ်တဲ့အထိ။",
+      "excerpt": "Claude Code ဆိုတာ ဘာလဲ၊ ဘယ်လို install လုပ်မလဲ၊ ပထမဆုံး session တစ်ခုက ဘယ်လိုဖြစ်မလဲ — terminal စဖွင့်တာနေပြီးတော့ ပထမဆုံး edit နဲ့ review တွေလုပ်တဲ့အထိ ဒီ သင်ခန်းစာမှာတွေ့ရမှာဖြစ်ပါတယ်။",
       "language": "my",
       "level": "beginner",
       "roles": [
