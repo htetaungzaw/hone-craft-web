@@ -23,7 +23,11 @@ function ArticlePage() {
   const { article, isFallback, neighbors } = Route.useLoaderData()
 
   return (
-    <main className="mx-auto max-w-2xl px-6 py-16">
+    <main className="relative mx-auto max-w-2xl overflow-hidden px-6 py-16">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(ellipse_at_top,_var(--secondary)_0%,_transparent_70%)] opacity-40 dark:opacity-15"
+      />
       <BackLink locale={locale} />
 
       {isFallback && (

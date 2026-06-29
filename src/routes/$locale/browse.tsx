@@ -39,7 +39,11 @@ function BrowsePage() {
   }
 
   return (
-    <main className="mx-auto max-w-4xl px-6 py-16">
+    <main className="relative mx-auto max-w-4xl overflow-hidden px-6 py-16">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-[radial-gradient(ellipse_at_top,_var(--secondary)_0%,_transparent_70%)] opacity-50 dark:opacity-20"
+      />
       <BackLink locale={locale} />
       <h1 className="mt-6 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
         Browse
@@ -78,7 +82,8 @@ function BrowsePage() {
 
         <div>
           <p className="text-muted-foreground mb-4 text-sm">
-            {filtered.length} article{filtered.length === 1 ? '' : 's'}
+            <span className="text-primary font-semibold">{filtered.length}</span> article
+            {filtered.length === 1 ? '' : 's'}
           </p>
 
           {filtered.length === 0 ? (

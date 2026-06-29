@@ -19,7 +19,11 @@ function PathPage() {
   const loc = locale as Locale
 
   return (
-    <main className="mx-auto max-w-2xl px-6 py-16">
+    <main className="relative mx-auto max-w-2xl overflow-hidden px-6 py-16">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(ellipse_at_top,_var(--secondary)_0%,_transparent_70%)] opacity-50 dark:opacity-20"
+      />
       <BackLink locale={locale} />
       <p className="text-muted-foreground mt-6 text-sm font-medium uppercase tracking-widest">
         Learning path

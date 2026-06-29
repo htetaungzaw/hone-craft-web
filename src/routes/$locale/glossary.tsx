@@ -13,7 +13,11 @@ function GlossaryPage() {
   const { terms, isFallback } = Route.useLoaderData()
 
   return (
-    <main className="mx-auto max-w-2xl px-6 py-16">
+    <main className="relative mx-auto max-w-2xl overflow-hidden px-6 py-16">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(ellipse_at_top,_var(--secondary)_0%,_transparent_70%)] opacity-50 dark:opacity-20"
+      />
       <BackLink locale={locale} />
       <h1 className="mt-6 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
         Glossary
