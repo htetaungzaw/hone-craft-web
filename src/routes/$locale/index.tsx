@@ -28,25 +28,37 @@ const copy: Record<
     browseAllArticles: 'Browse all articles',
     learningPaths: 'Learning paths',
     facets: [
-      { title: 'By level', desc: 'Beginner → professional. Climb at your own pace.' },
+      {
+        title: 'By level',
+        desc: 'Beginner → professional. Climb at your own pace.',
+      },
       { title: 'By role', desc: 'Developer, software engineer, DevOps / SRE.' },
-      { title: 'By topic', desc: 'Types of AI, agentic AI, tooling, pitfalls.' },
+      {
+        title: 'By topic',
+        desc: 'Types of AI, agentic AI, tooling, pitfalls.',
+      },
     ],
   },
   my: {
-    heading: 'AI နဲ့ တည်ဆောက်တတ်အောင် လေ့လာပြီး —',
-    headingAccent: 'သင့်ကျွမ်းကျင်မှုကို မြှောက်တင်ပါ။',
+    heading: 'AI အကူအညီနဲ့ Code ရေးတတ်အောင် လေ့လာရင်း —',
+    headingAccent: 'ကိုယ့်ရဲ့ အရည်အသွေးကို တိုးတက်အောင် စတင်ပျိုးထောင်လိုက်ပါ။',
     description:
-      'Developer၊ Software Engineer၊ DevOps များအတွက် 2026 ခုနှစ်တွင် AI ကို လက်တွေ့အသုံးပြုနည်း — ပထမဆုံး prompt ကနေ agentic workflow အထိ, ဘာသာစကားများစွာဖြင့် လေ့လာနိုင်သော practical guide။',
+      'Developer၊ Software Engineer နဲ့ DevOps များအတွက် ၂၀၂၆ ခုနှစ်ရဲ့ လက်တွေ့ကျဆုံး AI အသုံးချနည်းလမ်းညွှန်။ ပထမဆုံး Prompt ပေးနည်းကနေ အဆင့်မြင့် Agentic Workflows တွေအထိ ဘာသာစကားမျိုးစုံနဲ့ လေ့လာနိုင်ပါပြီ။',
     availableIn: 'ရရှိနိုင်သော ဘာသာစကားများ',
-    browseAllArticles: 'ဆောင်းပါးအားလုံး ကြည့်ရှုရန်',
+    browseAllArticles: 'ဆောင်းပါးအားလုံး ဖတ်ရှုရန်',
     learningPaths: 'သင်ယူမှု လမ်းကြောင်းများ',
     facets: [
-      { title: 'အဆင့်အလိုက်', desc: 'အခြေခံမှ ကျွမ်းကျင်သူအထိ — သင့်အရှိန်နှင့် တက်လှမ်းပါ။' },
-      { title: 'အလုပ်တာဝန်အလိုက်', desc: 'Developer၊ Software Engineer၊ DevOps / SRE။' },
+      {
+        title: 'သင်ယူမှု အဆင့်အလိုက်',
+        desc: 'အခြေခံမှသည် ပရော်ဖက်ရှင်နယ်အဆင့်ထိ တစ်ဆင့်ခြင်း လေ့လာပါ။',
+      },
+      {
+        title: 'အလုပ်တာဝန်အလိုက်',
+        desc: 'Developer၊ Software Engineer၊ DevOps / SRE များအတွက် သီးသန့်။',
+      },
       {
         title: 'ခေါင်းစဉ်အလိုက်',
-        desc: 'AI အမျိုးအစားများ၊ Agentic AI၊ Tools များ၊ သတိပြုရမည့်အချက်များ။',
+        desc: 'AI အမျိုးအစားများ၊ Agentic AI Tools များနှင့် သတိပြုရမည့် အမှားများ။',
       },
     ],
   },
@@ -60,8 +72,14 @@ const copy: Record<
     learningPaths: '学習パス',
     facets: [
       { title: 'レベル別', desc: '初級から上級まで、自分のペースで。' },
-      { title: '役割別', desc: 'デベロッパー、ソフトウェアエンジニア、DevOps / SRE。' },
-      { title: 'トピック別', desc: 'AIの種類、エージェント型AI、ツール、落とし穴。' },
+      {
+        title: '役割別',
+        desc: 'デベロッパー、ソフトウェアエンジニア、DevOps / SRE。',
+      },
+      {
+        title: 'トピック別',
+        desc: 'AIの種類、エージェント型AI、ツール、落とし穴。',
+      },
     ],
   },
 }
