@@ -4,6 +4,7 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import appCss from '../styles.css?url'
 import { ThemeToggle } from '../components/ThemeToggle'
+import { ThemePicker } from '../components/ThemePicker'
 import { themeBootstrapScript } from '../lib/theme'
 
 export const Route = createRootRoute({
@@ -60,7 +61,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: themeBootstrapScript }} />
       </head>
       <body className="bg-background text-foreground">
-        <div className="fixed right-4 top-4 z-50">
+        <div className="fixed right-4 top-4 z-50 flex items-center gap-2">
+          <ThemePicker />
           <ThemeToggle />
         </div>
         {children}
