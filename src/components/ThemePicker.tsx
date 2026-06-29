@@ -4,6 +4,7 @@ import {
   applyColorTheme,
   COLOR_THEMES,
   getPreferredColorTheme,
+  getPreferredMode,
   setColorTheme,
   type ColorTheme,
 } from '../lib/theme'
@@ -14,6 +15,8 @@ export function ThemePicker() {
   const [theme, setThemeState] = useState<ColorTheme | null>(null)
   const [open, setOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+
+  const isDark = getPreferredMode() === 'dark'
 
   useEffect(() => {
     const preferred = getPreferredColorTheme()
@@ -75,8 +78,13 @@ export function ThemePicker() {
               <span
                 aria-hidden="true"
                 data-theme={key}
-                className="bg-primary inline-block size-3 shrink-0 rounded-full"
-              />
+                className={cn('grid grid-cols-2 gap-0.5 shrink-0', isDark && 'dark')}
+              >
+                <span className="bg-primary size-1.5 rounded-[2px]" />
+                <span className="bg-secondary size-1.5 rounded-[2px]" />
+                <span className="bg-accent size-1.5 rounded-[2px]" />
+                <span className="bg-border size-1.5 rounded-[2px]" />
+              </span>
               {label}
             </button>
           ))}
