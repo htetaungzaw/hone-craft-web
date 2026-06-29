@@ -13,15 +13,15 @@ import { Button } from './ui/button'
 
 export function ThemePicker() {
   const [theme, setThemeState] = useState<ColorTheme | null>(null)
+  const [isDark, setIsDark] = useState(false)
   const [open, setOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
-
-  const isDark = getPreferredMode() === 'dark'
 
   useEffect(() => {
     const preferred = getPreferredColorTheme()
     applyColorTheme(preferred)
     setThemeState(preferred)
+    setIsDark(getPreferredMode() === 'dark')
   }, [])
 
   useEffect(() => {
