@@ -100,7 +100,10 @@ function BrowsePage() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <h2 className="font-medium">{article.title}</h2>
-                    <span className="text-muted-foreground mt-0.5 shrink-0 text-xs">
+                    <span
+                      className="text-muted-foreground mt-0.5 shrink-0 text-xs"
+                      title={new Date(article._updatedAt).toLocaleString('en', { dateStyle: 'medium', timeStyle: 'short' })}
+                    >
                       {timeAgo(article._updatedAt)}
                     </span>
                   </div>

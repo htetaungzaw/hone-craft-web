@@ -65,7 +65,12 @@ function ArticlePage() {
           <span className="flex items-center gap-1.5">
             <RefreshCw className="size-3.5 shrink-0 opacity-60" />
             {formatDate(article._updatedAt)}
-            <span className="text-muted-foreground/60">({timeAgo(article._updatedAt)})</span>
+            <span
+              className="text-muted-foreground/60"
+              title={new Date(article._updatedAt).toLocaleString('en', { dateStyle: 'medium', timeStyle: 'short' })}
+            >
+              ({timeAgo(article._updatedAt)})
+            </span>
           </span>
         )}
       </div>
