@@ -128,6 +128,15 @@ export default defineType({
     }),
 
     defineField({
+      name: 'aiPrompt',
+      title: 'Try it with AI — prompt',
+      type: 'text',
+      group: 'content',
+      rows: 4,
+      description: 'A ready-made prompt readers can paste into an AI tool to practice the concepts in this article.',
+    }),
+
+    defineField({
       name: 'seo',
       title: 'SEO',
       type: 'object',

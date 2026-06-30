@@ -29,6 +29,7 @@ export interface Article extends ArticleSummary {
   body: unknown
   translationStatus: string
   translationOfId: string | null
+  aiPrompt?: string
   _createdAt: string
   _updatedAt: string
   author: {
@@ -70,6 +71,7 @@ const articleProjection = `{
   body,
   translationStatus,
   "translationOfId": translationOf._ref,
+  aiPrompt,
   "author": author->{ name, slug, avatar, bio },
 }`
 
@@ -148,6 +150,40 @@ export async function getLessonNeighbors(
   ])
 
   return { pathSlug: path.slug.current, pathTitle: path.title, prev, next }
+}
+
+export interface ArticleTranslation {
+  _id: string
+  language: Locale
+  slug: { current: string }
+}
+
+export async function getArticleTranslations(
+  article: { _id: string; translationOfId: string | null },
+): Promise<Array<ArticleTranslation>> {
+  const canonicalId = article.translationOfId ?? article._id
+  return sanityClient.fetch<Array<ArticleTranslation>>(
+    `*[_type=="article" && (_id==$canonicalId || translationOf._ref==$canonicalId)]{ _id, language, slug }`,
+    { canonicalId },
+  )
+}
+
+export async function getRelatedArticles(
+  article: { _id: string; topics: Array<{ _id: string }>; roles: Array<{ _id: string }> },
+  locale: Locale,
+  limit = 3,
+): Promise<Array<ArticleSummary>> {
+  const topicIds = article.topics.map((t) => t._id)
+  const roleIds = article.roles.map((r) => r._id)
+  if (topicIds.length === 0 && roleIds.length === 0) return []
+  const results = await sanityClient.fetch<Array<ArticleSummary>>(
+    `*[_type=="article" && _id!=$id && language==$locale && (
+      count((topics[]._ref)[@ in $topicIds]) > 0 ||
+      count((roles[]._ref)[@ in $roleIds]) > 0
+    )] | order(_updatedAt desc) [0...$limit]${articleSummaryProjection}`,
+    { id: article._id, locale, topicIds, roleIds, limit },
+  )
+  return results
 }
 
 export async function getTaxonomyTerm(
