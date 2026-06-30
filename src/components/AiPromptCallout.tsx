@@ -20,8 +20,7 @@ export function AiPromptCallout({ prompt }: Props) {
         <Sparkles className="text-primary size-4 shrink-0" />
         <span className="text-primary text-sm font-semibold">Try it with AI</span>
       </div>
-      <p className="text-foreground/80 relative rounded-lg bg-white/60 px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap dark:bg-black/20">
-        {prompt}
+      <div className="relative rounded-lg bg-white/60 dark:bg-black/20">
         <button
           type="button"
           onClick={handleCopy}
@@ -31,7 +30,10 @@ export function AiPromptCallout({ prompt }: Props) {
         >
           {copied ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}
         </button>
-      </p>
+        <p className="text-foreground/80 pr-8 px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap">
+          {prompt}
+        </p>
+      </div>
       <p className="text-muted-foreground mt-2 text-xs">
         Paste this prompt into Claude, ChatGPT, or any AI tool to practise the concepts in this article.
       </p>
