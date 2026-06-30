@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
+import { RefreshCw } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import type { Locale } from '../../../sanity/lib/locale'
 import { BackLink } from '../../components/BackLink'
 import { FacetGroup } from '../../components/FacetGroup'
 import { searchIndex } from '../../lib/searchIndex'
-import { timeAgo } from '../../lib/date'
+import { formatDate, timeAgo } from '../../lib/date'
 
 export const Route = createFileRoute('/$locale/browse')({ component: BrowsePage })
 
@@ -101,10 +102,12 @@ function BrowsePage() {
                   <div className="flex items-start justify-between gap-4">
                     <h2 className="font-medium">{article.title}</h2>
                     <span
-                      className="text-muted-foreground mt-0.5 shrink-0 text-xs"
+                      className="text-muted-foreground mt-0.5 flex shrink-0 items-center gap-1 text-xs"
                       title={new Date(article._updatedAt).toLocaleString('en', { dateStyle: 'medium', timeStyle: 'short' })}
                     >
-                      {timeAgo(article._updatedAt)}
+                      <RefreshCw className="size-3 opacity-60" />
+                      {formatDate(article._updatedAt)}
+                      <span className="opacity-60">· {timeAgo(article._updatedAt)}</span>
                     </span>
                   </div>
                   <p className="text-muted-foreground mt-1 text-sm">{article.excerpt}</p>
