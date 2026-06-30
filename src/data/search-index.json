@@ -1,8 +1,9 @@
 {
-  "generatedAt": "2026-06-29T08:24:08.141Z",
+  "generatedAt": "2026-06-30T04:04:02.391Z",
   "articles": [
     {
       "_id": "172603cb-ee7a-45d6-a2d6-9afdfeee1b6b",
+      "_updatedAt": "2026-06-27T06:56:16Z",
       "excerpt": "Chatbots၊ Copilots နှင့် Agents အပါအဝင် ခေတ်ပြိုင် AI နည်းပညာပုံစံအမျိုးမျိုးကို စနစ်တကျနားလည်ပြီး၊ ဝေါဟာရရှုပ်ထွေးမှုများကြောင့် လုပ်ငန်းခွင်တွင် အနှောင့်အယှက်မဖြစ်စေရန် ပြုစုထားသော လက်တွေ့အသုံးချ မြေပုံတစ်ခု ဖြစ်ပါသည်။",
       "language": "my",
       "level": "beginner",
@@ -22,6 +23,7 @@
     },
     {
       "_id": "article-agentic-workflows-for-software-engineers",
+      "_updatedAt": "2026-06-27T04:15:34Z",
       "excerpt": "Three concrete workflows where an agent loop earns its keep for software engineers — and the checkpoints that keep each one safe to run unsupervised.",
       "language": "en",
       "level": "intermediate",
@@ -40,6 +42,7 @@
     },
     {
       "_id": "article-claude-code-agents-and-subagents",
+      "_updatedAt": "2026-06-28T05:54:51Z",
       "excerpt": "A subagent is a separate Claude instance you spawn for a piece of work. Knowing when to delegate to one — and how to brief it like a capable colleague — is what separates basic and advanced usage.",
       "language": "en",
       "level": "advanced",
@@ -59,6 +62,7 @@
     },
     {
       "_id": "article-claude-code-agents-and-subagents-my",
+      "_updatedAt": "2026-06-28T14:48:30Z",
       "excerpt": "Subagent ဆိုတာ အလုပ်တစ်ခုအတွက် သင်ဖန်တီးလိုက်တဲ့ သီးခြား Claude Instance တစ်ခုပါ။ ဘယ်အချိန်မှာ အလုပ်ခွဲခိုင်းရမလဲ၊ ကျွမ်းကျင်တဲ့ လုပ်ဖော်ကိုင်ဖက်တစ်ယောက်လို ဘယ်လို စနစ်တကျ ညွှန်ကြားရမလဲဆိုတာ သိထားရင် AI ကို အသုံးပြုရတဲ့ Level သိသိသာသာ တက်လာပါလိမ့်မယ်။",
       "language": "my",
       "level": "advanced",
@@ -78,6 +82,7 @@
     },
     {
       "_id": "article-claude-code-everyday-workflow",
+      "_updatedAt": "2026-06-28T05:54:08Z",
       "excerpt": "Reading, editing, running commands, reviewing diffs, and undoing mistakes — the small habits that make day-to-day work with an agent smooth instead of stressful.",
       "language": "en",
       "level": "beginner",
@@ -97,6 +102,7 @@
     },
     {
       "_id": "article-claude-code-everyday-workflow-my",
+      "_updatedAt": "2026-06-28T13:00:13Z",
       "excerpt": "ဖတ်ခြင်း၊ ပြင်ဆင်ခြင်း၊ command run ခြင်း၊ diff review ခြင်း၊ မှားယွင်းချက်များကို ပြန်ပြင်ခြင်း — agent နဲ့ နေ့စဉ်အလုပ်လုပ်ရာတွင် စိတ်ပင်ပန်းမှုမရှိအောင် ကူညီပေးတဲ့ အလေ့အကျင့်လေးများ။",
       "language": "my",
       "level": "beginner",
@@ -116,6 +122,7 @@
     },
     {
       "_id": "article-claude-code-getting-started",
+      "_updatedAt": "2026-06-28T05:53:39Z",
       "excerpt": "What Claude Code actually is, how to install it, and what your first real session looks like — from opening a terminal to your first reviewed edit.",
       "language": "en",
       "level": "beginner",
@@ -135,6 +142,7 @@
     },
     {
       "_id": "article-claude-code-getting-started-my",
+      "_updatedAt": "2026-06-29T02:08:03Z",
       "excerpt": "Claude Code ဆိုတာ ဘာလဲ၊ ဘယ်လို install လုပ်မလဲ၊ ပထမဆုံး session တစ်ခုက ဘယ်လိုဖြစ်မလဲ — terminal စဖွင့်တာနေပြီးတော့ ပထမဆုံး edit နဲ့ review တွေလုပ်တဲ့အထိ ဒီ သင်ခန်းစာမှာတွေ့ရမှာဖြစ်ပါတယ်။",
       "language": "my",
       "level": "beginner",
@@ -154,6 +162,7 @@
     },
     {
       "_id": "article-claude-code-memory-explained",
+      "_updatedAt": "2026-06-28T05:54:29Z",
       "excerpt": "How CLAUDE.md files give Claude Code lasting context about you and your project, what belongs in them, and what to leave out.",
       "language": "en",
       "level": "intermediate",
@@ -173,6 +182,7 @@
     },
     {
       "_id": "article-claude-code-memory-explained-my",
+      "_updatedAt": "2026-06-28T12:59:16Z",
       "excerpt": "Claude Code ရဲ့ CLAUDE.md ဖိုင်တွေကတစ်ဆင့် AI ကို သင့် project အကြောင်း ရေရှည်မှတ်ဉာဏ် (Persistent Memory) ဘယ်လိုပေးမလဲ။ Chat အသစ်တိုင်း အစကနေ ပြန်ရှင်းပြရတဲ့ ဒုက္ခကင်းဝေးစေဖို့ ဘာတွေထည့်ပြီး ဘာတွေချန်ထားသင့်သလဲဆိုတာကို လေ့လာကြည့်ရအောင်။",
       "language": "my",
       "level": "intermediate",
@@ -192,6 +202,7 @@
     },
     {
       "_id": "article-claude-code-plan-mode-worktrees-hooks-at-scale",
+      "_updatedAt": "2026-06-28T05:55:04Z",
       "excerpt": "The professional layer: exploring safely before committing to changes, running parallel agent work without collisions, automating policy with hooks, and the team habits that make this sustainable.",
       "language": "en",
       "level": "professional",
@@ -211,6 +222,7 @@
     },
     {
       "_id": "article-claude-code-plan-mode-worktrees-hooks-at-scale-my",
+      "_updatedAt": "2026-06-28T15:05:37Z",
       "excerpt": "Claude Code ကို Production စနစ်တွေပေါ်မှာ Team အလိုက် လုံခြုံစွာ Scale ချဲ့သုံးစွဲနည်း။ အမှားကင်းဝေးစေမယ့် Plan Mode၊ Task တွေကို ပြိုင်တူ Run မယ့် Worktrees နဲ့ အဖွဲ့အစည်းရဲ့ စည်းကမ်းတွေကို အလိုအလျောက် Enforce လုပ်ပေးမယ့် Hooks စနစ်တွေကို လေ့လာကြည့်ရအောင်။",
       "language": "my",
       "level": "professional",
@@ -230,6 +242,7 @@
     },
     {
       "_id": "article-claude-code-skills-and-slash-commands",
+      "_updatedAt": "2026-06-28T05:54:36Z",
       "excerpt": "Memory tells Claude facts about your project. Skills give it reusable procedures — named, repeatable workflows you can trigger with a single command.",
       "language": "en",
       "level": "intermediate",
@@ -249,6 +262,7 @@
     },
     {
       "_id": "article-claude-code-skills-and-slash-commands-my",
+      "_updatedAt": "2026-06-28T14:23:47Z",
       "excerpt": "Memory က Project အချက်အလက်တွေကို မှတ်မိစေရင်၊ Skills က ထပ်ခါထပ်ခါ လုပ်ရတဲ့ အလုပ်တွေကို Slash Command တစ်ခုတည်းနဲ့ Run စေပါတယ်။ လုပ်ငန်းစဉ်တွေကို အကြိမ်တိုင်း တိကျမှန်ကန်အောင် ဘယ်လို Automation ဖန်တီးမလဲဆိုတာ လေ့လာကြည့်ရအောင်။",
       "language": "my",
       "level": "intermediate",
@@ -268,6 +282,7 @@
     },
     {
       "_id": "article-claude-desktop-computer-use-and-mcp",
+      "_updatedAt": "2026-06-28T05:54:43Z",
       "excerpt": "What the Desktop app adds beyond chat: supervised control of your screen for native apps, and MCP connectors that link Claude to the tools you already use.",
       "language": "en",
       "level": "intermediate",
@@ -287,6 +302,7 @@
     },
     {
       "_id": "article-claude-desktop-computer-use-and-mcp-my",
+      "_updatedAt": "2026-06-28T14:37:25Z",
       "excerpt": "Desktop App က Chat Window ထက် ဘာတွေ ပိုလုပ်ပေးနိုင်သလဲ။ Browser tab တစ်ခု မလုပ်နိုင်တဲ့ Native App တွေအတွက် ထိန်းချုပ်ထားသော Screen Control နဲ့ ပြင်ပ Tool တွေကို စနစ်တကျ ချိတ်ဆက်ပေးမယ့် MCP Connectors အကြောင်း လေ့လာကြည့်ရအောင်။",
       "language": "my",
       "level": "intermediate",
@@ -306,6 +322,7 @@
     },
     {
       "_id": "article-claude-in-chrome-safe-web-automation",
+      "_updatedAt": "2026-06-28T05:54:56Z",
       "excerpt": "The Chrome extension lets Claude read, click, and type on real web pages on your behalf. What it's genuinely good for, and the safety habits worth keeping non-negotiable.",
       "language": "en",
       "level": "advanced",
@@ -325,6 +342,7 @@
     },
     {
       "_id": "article-claude-in-chrome-safe-web-automation-my",
+      "_updatedAt": "2026-06-28T14:54:23Z",
       "excerpt": "Chrome Extension က Claude ကို Web Page တွေပေါ်မှာ လူတစ်ယောက်လို ဖတ်ရှု၊ နှိပ်စက်၊ စာရိုက်နိုင်စွမ်း ပေးစွမ်းပါတယ်။ ဒါက ဘယ်လိုအလုပ်တွေအတွက် တကယ်ကောင်းသလဲ၊ ဘယ်လိုမျိုး လုံခြုံရေးအလေ့အကျင့်တွေ မဖြစ်မနေ ထားရှိရမလဲဆိုတာ လေ့လာကြည့်ရအောင်။",
       "language": "my",
       "level": "advanced",
@@ -344,6 +362,7 @@
     },
     {
       "_id": "article-claude-surfaces-which-one-for-what",
+      "_updatedAt": "2026-06-28T05:54:18Z",
       "excerpt": "Four different places to talk to Claude, each built for a different job. A practical decision guide so you stop reaching for the wrong one.",
       "language": "en",
       "level": "beginner",
@@ -363,6 +382,7 @@
     },
     {
       "_id": "article-claude-surfaces-which-one-for-what-my",
+      "_updatedAt": "2026-06-28T11:13:31Z",
       "excerpt": "Claude ကို အသုံးပြုနိုင်တဲ့ နေရာလေးခု ရှိပါတယ်။ တစ်ခုစီက အလုပ်အမျိုးအစား မတူညီတဲ့ ပန်းတိုင်တွေအတွက် သီးသန့် ရည်ရွယ်ပြီး ဖန်တီးထားတာပါ။ Tool အမှားကြီး ရွေးပြီး အချိန်မကုန်စေဖို့အတွက် လက်တွေ့ကျကျ ဆုံးဖြတ်နိုင်မယ့် လမ်းညွှန်ချက်ကို ဖော်ပြပေးလိုက်ပါတယ်။",
       "language": "my",
       "level": "beginner",
@@ -382,6 +402,7 @@
     },
     {
       "_id": "article-common-pitfalls-adopting-ai-tools",
+      "_updatedAt": "2026-06-27T04:15:36Z",
       "excerpt": "The recurring ways teams get burned adopting AI tools — overtrust, under-scoping, and skipped review — and the concrete habits that prevent each one.",
       "language": "en",
       "level": "advanced",
@@ -401,6 +422,7 @@
     },
     {
       "_id": "article-first-ai-pair-programming-session",
+      "_updatedAt": "2026-06-27T04:15:33Z",
       "excerpt": "A concrete walkthrough of working with an AI coding assistant on a real, small task — what to type, what to check, and the habits that make the difference.",
       "language": "en",
       "level": "beginner",
@@ -418,6 +440,7 @@
     },
     {
       "_id": "article-types-of-ai-you-will-actually-use",
+      "_updatedAt": "2026-06-29T08:19:03Z",
       "excerpt": "Chatbots, copilots, agents, and everything in between — a working map of the AI tools you'll run into, so the vocabulary stops getting in your way.",
       "language": "en",
       "level": "beginner",
@@ -437,6 +460,7 @@
     },
     {
       "_id": "article-using-ai-agents-safely-in-devops",
+      "_updatedAt": "2026-06-27T04:15:35Z",
       "excerpt": "Agentic AI can write infra changes, draft runbooks, and triage incidents — but the blast radius of a mistake is higher in DevOps than almost anywhere else. Here's how to use it without losing sleep.",
       "language": "en",
       "level": "intermediate",
@@ -456,6 +480,7 @@
     },
     {
       "_id": "article-what-is-agentic-ai-really",
+      "_updatedAt": "2026-06-27T04:15:32Z",
       "excerpt": "Past the buzzword: what makes an AI system \"agentic,\" what it can and can't do unsupervised, and the mental model that keeps you from over- or under-trusting it.",
       "language": "en",
       "level": "beginner",
@@ -475,6 +500,7 @@
     },
     {
       "_id": "translate-article-types-of-ai-you-will-actually-use-ja",
+      "_updatedAt": "2026-06-27T06:09:10Z",
       "excerpt": "チャットボット、コパイロット、エージェント、そしてその中間にあるすべてのもの — あなたが出会うAIツールの実用的なマップ。これにより、専門用語に悩まされることがなくなります。",
       "language": "ja",
       "level": "beginner",
@@ -494,6 +520,7 @@
     },
     {
       "_id": "translate-article-what-is-agentic-ai-really-my",
+      "_updatedAt": "2026-06-27T06:10:21Z",
       "excerpt": "ရေပန်းစားနေတဲ့ စကားလုံးနောက်ကွယ်မှာ- AI စနစ်တစ်ခုကို \"agentic\" ဖြစ်အောင် ဘာကလုပ်တာလဲ၊ ၎င်းက ကြီးကြပ်မှုမရှိဘဲ ဘာတွေလုပ်နိုင်လဲ၊ မလုပ်နိုင်လဲ၊ ပြီးတော့ ၎င်းကို ယုံကြည်မှုလွန်ကဲခြင်း သို့မဟုတ် လျော့နည်းခြင်းမှ ကာကွယ်ပေးမယ့် စိတ်ပိုင်းဆိုင်ရာ ပုံစံ။",
       "language": "my",
       "level": "beginner",

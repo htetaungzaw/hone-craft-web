@@ -4,6 +4,7 @@ import type { Locale } from '../../../sanity/lib/locale'
 import { BackLink } from '../../components/BackLink'
 import { FacetGroup } from '../../components/FacetGroup'
 import { searchIndex } from '../../lib/searchIndex'
+import { timeAgo } from '../../lib/date'
 
 export const Route = createFileRoute('/$locale/browse')({ component: BrowsePage })
 
@@ -97,7 +98,12 @@ function BrowsePage() {
                   params={{ locale, slug: article.slug.current }}
                   className="bg-card border-border hover:border-primary/40 rounded-xl border p-5 text-left shadow-sm transition hover:shadow-md"
                 >
-                  <h2 className="font-medium">{article.title}</h2>
+                  <div className="flex items-start justify-between gap-4">
+                    <h2 className="font-medium">{article.title}</h2>
+                    <span className="text-muted-foreground mt-0.5 shrink-0 text-xs">
+                      {timeAgo(article._updatedAt)}
+                    </span>
+                  </div>
                   <p className="text-muted-foreground mt-1 text-sm">{article.excerpt}</p>
                 </Link>
               ))}

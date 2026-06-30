@@ -24,6 +24,7 @@ async function main() {
   const [articles, level, role, topic] = await Promise.all([
     client.fetch(`*[_type=="article"]{
       _id,
+      _updatedAt,
       title,
       slug,
       excerpt,

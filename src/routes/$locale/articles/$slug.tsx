@@ -1,8 +1,10 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
+import { CalendarDays, RefreshCw } from 'lucide-react'
 import type { Locale } from '../../../../sanity/lib/locale'
 import { getArticleBySlug, getLessonNeighbors } from '../../../lib/queries'
 import { localized } from '../../../lib/localized'
 import { urlFor } from '../../../lib/image'
+import { formatDate, timeAgo } from '../../../lib/date'
 import { Badge } from '../../../components/ui/badge'
 import { BackLink } from '../../../components/BackLink'
 import { ArticleBody } from '../../../components/ArticleBody'
@@ -41,7 +43,7 @@ function ArticlePage() {
       </h1>
       <p className="text-muted-foreground mt-3 text-lg">{article.excerpt}</p>
 
-      <div className="text-muted-foreground mt-4 flex flex-wrap items-center gap-2 text-sm">
+      <div className="text-muted-foreground mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
         {article.level && (
           <Badge variant="secondary">{localized(article.level.title, locale as Locale)}</Badge>
         )}
@@ -51,22 +53,19 @@ function ArticlePage() {
           </Badge>
         ))}
         {article.readingTime && <span>{article.readingTime} min read</span>}
-        <span>
-          Published{' '}
-          {new Date(article._createdAt).toLocaleDateString('en', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-          })}
+
+        <span className="bg-border mx-1 hidden h-3.5 w-px sm:inline-block" aria-hidden="true" />
+
+        <span className="flex items-center gap-1.5">
+          <CalendarDays className="size-3.5 shrink-0 opacity-60" />
+          {formatDate(article._createdAt)}
         </span>
+
         {article._updatedAt !== article._createdAt && (
-          <span>
-            · Updated{' '}
-            {new Date(article._updatedAt).toLocaleDateString('en', {
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric',
-            })}
+          <span className="flex items-center gap-1.5">
+            <RefreshCw className="size-3.5 shrink-0 opacity-60" />
+            {formatDate(article._updatedAt)}
+            <span className="text-muted-foreground/60">({timeAgo(article._updatedAt)})</span>
           </span>
         )}
       </div>

@@ -10,6 +10,7 @@ export interface IndexTaxonomyTerm {
 
 export interface IndexArticle {
   _id: string
+  _updatedAt: string
   title: string
   slug: { current: string }
   excerpt: string
