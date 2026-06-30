@@ -29,6 +29,8 @@ export interface Article extends ArticleSummary {
   body: unknown
   translationStatus: string
   translationOfId: string | null
+  _createdAt: string
+  _updatedAt: string
   author: {
     name: string
     slug: { current: string }
@@ -54,6 +56,8 @@ const articleSummaryProjection = `{
 
 const articleProjection = `{
   _id,
+  _createdAt,
+  _updatedAt,
   title,
   slug,
   excerpt,

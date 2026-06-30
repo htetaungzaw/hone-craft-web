@@ -51,6 +51,24 @@ function ArticlePage() {
           </Badge>
         ))}
         {article.readingTime && <span>{article.readingTime} min read</span>}
+        <span>
+          Published{' '}
+          {new Date(article._createdAt).toLocaleDateString('en', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          })}
+        </span>
+        {article._updatedAt !== article._createdAt && (
+          <span>
+            · Updated{' '}
+            {new Date(article._updatedAt).toLocaleDateString('en', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+            })}
+          </span>
+        )}
       </div>
 
       {Boolean(article.heroImage) && (
